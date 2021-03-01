@@ -560,7 +560,7 @@ function sendMail(e) {
     fd.append("email", email);
     fd.append("message", message);
 
-    xmlhttp.open("POST", "traitementConnexion.php");
+    xmlhttp.open("POST", "ignore.php");
     xmlhttp.send(fd);
 
 }

@@ -2,9 +2,6 @@
     session_start();
     require "db.php";
 
-    // $user = "AugustinD";
-    // $password = "SfNn7Xfr5@Gv";
-
     if(!empty($_POST["inputPassword"])){
 
         if(!empty($_POST["inputUser"])){

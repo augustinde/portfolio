@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div class="rowCard" id="rwCard">
+
+
+
+
+</div>
+
+
+<script>
+
+    window.onload(requestDisplayAllProjet());
+
+    function requestDisplayAllProjet(){
+
+        let xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                let res = JSON.parse(xmlhttp.responseText);
+
+
+                res.forEach(element => {
+                    //Récupération des données
+                    let nomProjet, descProjet, urlDocFournit, urlProjet, idProjet, array_technologies = [], array_competences = [], array_images = [];
+
+                    idProjet = element[0].id;
+                    nomProjet = element[1].nom;
+                    descProjet = element[2].description;
+                    urlDocFournit = element[3].urlDocFournit;
+                    urlProjet = element[4].urlProjet;
+                    element[5].technologies.forEach(techno => {
+                       array_technologies.push(techno);
+                    });
+
+                    element[6].competences.forEach(comp => {
+                       array_competences.push(comp);
+                    });
+
+                    element[7].images.forEach(img => {
+                       array_images.push(img);
+                    });
+
+                    //Création de la card
+                    let elementCardProjet = document.createElement("div");
+                    elementCardProjet.setAttribute("class", "cardProjet");
+
+                    let elementImage = document.createElement("img");
+                    elementImage.src = array_images[0].cheminImage;
+                    elementImage.alt = "Image projet N°"+idProjet;
+
+                    let elementContenuCard = document.createElement("div");
+                    elementContenuCard.setAttribute("class", "contenuCard");
+
+                    let elementP = document.createElement("p");
+
+                    let textElementP = document.createTextNode(nomProjet);
+
+                    elementP.appendChild(textElementP);
+                    elementContenuCard.appendChild(elementP);
+                    elementCardProjet.appendChild(elementImage);
+                    elementCardProjet.appendChild(elementContenuCard);
+
+                    //Ajout de l'event pour afficher le modal au click
+                    elementCardProjet.addEventListener("click", console.log("d"));
+
+                    document.getElementById("rwCard").appendChild(elementCardProjet);
+
+
+                    console.log(nomProjet)
+                    console.log(array_competences)
+                    console.log(array_images)
+                    console.log(array_technologies)
+
+
+
+                });
+
+            }
+        };
+
+        xmlhttp.open("POST", "getAllProjet.php");
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xmlhttp.send();
+
+    }
+
+</script>
+</body>
+</html>

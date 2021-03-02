@@ -18,3 +18,10 @@
     * Correct the responsive
   * Connection module
     * Correct connection
+  * Technology watch module
+    * Add icon in index.php to open technology watch sidepage
+  * Other
+   * Add all project in database
+   * Add .htaccess file
+   * Add technologies management in dashboard
+   * Languages management

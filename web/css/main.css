@@ -995,6 +995,11 @@ footer hr{
 	flex: 1 0 0;
 }
 
+.asideFooter a{
+	text-decoration: none;
+	color:#b2babb;
+}
+
 
 footer .iconFooter {
 	display:flex;

@@ -321,12 +321,14 @@
             <div class="wrapperFooter">
                 <div class="mainFooter">
                     <h4>A propos</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident aliquid inventore expedita, distinctio labore animi accusantium iste quo pariatur veniam dolore sunt vitae nobis delectus? Dolorum expedita veniam molestiae maiores.</p>
+                    <p>Passionné des technologies du web et étudiant dans ce secteur, je suis développeur web full stack, freelance.
+                        Je réalise des sites web en passant du cahier des charges jusqu'à la mise en ligne.
+                        Je conçois le design en mettant en avant la meilleure expérience utilisateur ainsi qu'une bonne qualité de code.</p>
                 </div>
                 <div class="asideFooter asideFooter-1">
                     <h4>Navigation</h4>
                     <ul>
-                        <li>Veille informatique</li>
+                        <li><a href="veille-techno.php">Veille informatique</a></li>
                         <li>Mentions légales</li>
                         <li>CGU</li>
                         <li>CGV</li>
@@ -335,16 +337,16 @@
                 <div class="asideFooter asideFooter-2">
                     <h4>Contact</h4>
                     <ul>
-                        <li>Monsieur Personne</li>
-                        <li>06.06.06.06.06</li>
-                        <li>email.exemple@gmail.com</li>
+                        <li>Desaintfucien Augustin</li>
+                        <li>06.75.08.57.95</li>
+                        <li>contact@desaintfucienaugustin.fr</li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="wrapperFooter">
                 <div class="copyrightFooter">
-                    Copyright &copy; 2021 Tous droits réservés par Monsieur Personne
+                    Copyright &copy; 2021 Tous droits réservés par Desaintfucien Augustin
                 </div>
                 <div class="iconFooter">
                     <a href="https://github.com/augustinde" target="_blank">

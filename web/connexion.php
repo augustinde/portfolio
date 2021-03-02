@@ -47,7 +47,7 @@
         
         <h1>Connexion</h1>
 
-        <form action="ignore.php" method="POST">
+        <form action="traitement-connexion.php" method="POST">
       
             <div class="colForm">
                             

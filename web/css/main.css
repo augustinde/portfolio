@@ -318,6 +318,7 @@ header::before{
 	position: relative;
 	animation: down 1.5s infinite;
 	-webkit-animation: down 1.5s infinite;
+	margin-top:10px;
 }
 
 .scroll::before {
@@ -1099,14 +1100,185 @@ footer .iconFooter a:hover{
 	color:#fff;
 }
 
+/*
+	START MODULE VEILLE TECHNOLOGIQUE
+ */
 
+#containerSidebar{
+	height:100%;
+	width:40%;
+	padding-left:100px;
+	background-color:#17202A;
+	position:fixed;
+	top:0;
+	left:0;
+	transform:translatex(-100%);
+	transition:all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	z-index:10;
+	box-shadow:3px 3px 8px 0px rgb(0 0 0 / 50%);
+}
+
+#containerSidebar.toggleSidebar{
+	transform:translateX(0%);
+	left:-100px;
+
+}
+
+
+#btnVeilleTechno{
+	background-color:#17202A;
+	border-bottom-right-radius:10px;
+	border-top-right-radius:10px;
+	top:100px;
+	position:absolute;
+	right:-60px;
+	cursor:pointer;
+	z-index:9;
+	transition:all 0.3s ease;
+	box-shadow:3px 3px 8px 0px rgb(0 0 0 / 25%);
+	width:70px;
+	height:62px;
+}
+
+.hoverBtnVeille:hover {
+	transform:translatex(5px);
+}
+
+#btnVeilleTechno i{
+	color:#fff;
+	transform:rotate(-40deg);
+	transition:all 0.3s ease-in-out;
+	margin:12px 20px 10px 22px;
+
+}
+
+#btnVeilleTechno.changeIconBtnVeille i{
+	transform:rotate(0deg);
+	margin:15px 15px 15px 27px;
+
+}
+
+.changeIconBtnVeille i::before{
+	content:"\f00d";
+
+}
+
+.contentSidebar{
+	background-color:#17202A;
+	position:relative;
+	transition:all 0.1s ease;
+	z-index:10;
+	height:100%;
+	overflow-wrap:break-word;
+	overflow-y:auto;
+	overflow-x:break-word;
+}
+
+.contentSidebar::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+.contentSidebar::-webkit-scrollbar:vertical {
+	width: 8px;
+	background-color:rgba(7, 81, 135,0.5);
+}
+
+.contentSidebar::-webkit-scrollbar-thumb {
+	border: 1px solid transparent; /* should match background, can't be transparent */
+	background-color: #fff;
+}
+
+
+.contentSidebar h2{
+	text-align:center;
+	color:#fff;
+	padding:10px;
+}
+
+.columnCardVeille{
+
+	display:flex;
+	flex-direction:column;
+	padding:20px;
+}
+
+.cardVeille{
+
+	margin-bottom:20px;
+	position:relative;
+
+}
+
+.cardVeille img{
+	width:100%;
+	height:auto;
+	display:block;
+
+}
+
+.cardVeille::after{
+	content:"";
+	height:100%;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.cardVeille a{
+	color:#fff;
+	font-weight:bold;
+	position: absolute;
+	text-decoration:none;
+	left:10px;
+	bottom:10px;
+	z-index:10;
+	transition:all 0.3s ease-in-out;
+}
+
+
+.cardVeille a:hover{
+	transform:translatey(-5px);
+}
+
+
+.textVeille{
+	color:#fff;
+	padding:20px;
+}
+
+
+.screenSidebar{
+	height:100%;
+	width:100%;
+	background-color:rgba(23,32,42,0.6);
+	position:absolute;
+	top:0;
+	left:0;
+	transform:translatex(-100%);
+	transition:all 0.2s ease-in-out 0.2s;
+	z-index:10;
+}
+/*
+	END MODULE VEILLE TECHNOLOGIQUE
+ */
 
 @media (min-width: 1200px) {
 
 	header img{
 		width:40vw;
 	}
-
+	/*
+        START MODULE VEILLE TECHNOLOGIQUE
+     */
+	#containerSidebar{
+		width:45%;
+	}
+	/*
+        END MODULE VEILLE TECHNOLOGIQUE
+     */
 }
 
 @media only screen and (max-width: 1199.98px) {
@@ -1148,10 +1320,18 @@ footer .iconFooter a:hover{
 	.contentModal{
 		width:80%;
 	}
-
+	/*
+        START MODULE VEILLE TECHNOLOGIQUE
+     */
+	#containerSidebar{
+		width:50%;
+	}
+	/*
+        END MODULE VEILLE TECHNOLOGIQUE
+     */
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
 /* 	
 	nav{
 		justify-content: center;
@@ -1225,11 +1405,19 @@ footer .iconFooter a:hover{
 	.contentModal{
 		width: 90%;
 	}
+	/*
+		START MODULE VEILLE TECHNOLOGIQUE
+	 */
+	#containerSidebar{
+		width:60%;
+	}
+	/*
 
-
+    	END MODULE VEILLE TECHNOLOGIQUE
+ 	*/
 }
 
-@media all and (min-width: 800px) {
+@media only screen and (min-width: 800px) {
 
 	.mainFooter    {
 		flex: 3 0px;
@@ -1450,7 +1638,19 @@ footer .iconFooter a:hover{
 
 }
 
-@media only screen and (max-width: 575.98px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
+	/*
+		START MODULE VEILLE TECHNOLOGIQUE
+	 */
+	#containerSidebar{
+		width:70%;
+	}
+	/*
+		END MODULE VEILLE TECHNOLOGIQUE
+	 */
+}
+
+@media (max-width: 575.98px) {
 
 	nav #contentNav{
 		width:100%;
@@ -1519,6 +1719,28 @@ footer .iconFooter a:hover{
 
 	}
 
+	/*
+		START MODULE VEILLE TECHNOLOGIQUE
+	 */
+	.contentSidebar h2{
+		color:#fff;
+		padding:5px 10px;
+	}
+
+	#containerSidebar{
+		width:100%;
+	}
+
+	#containerSidebar.toggleSidebar{
+		transform:translateX(0%);
+	}
+
+	.textVeille{
+		font-size:14px;
+	}
+	/*
+		END MODULE VEILLE TECHNOLOGIQUE
+	 */
 }
 
 

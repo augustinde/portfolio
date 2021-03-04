@@ -64,7 +64,42 @@
 		</nav>
 
 		<!-- End navigation -->
-		
+        <div class="screenSidebar"></div>
+        <div id="containerSidebar">
+            <div class="contentSidebar">
+                <h2>Veille technologique</h2>
+                <div class="textVeille">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt blanditiis dolorum accusamus, perferendis nihil nemo voluptate. Vero, non labore! Sint eaque cupiditate blanditiis quod quidem, laborum inventore neque. Officia modi velit sunt laudantium, possimus nemo harum quis voluptatum, nesciunt nam fugit. Asperiores ipsa numquam vero totam harum id recusandae necessitatibus beatae nostrum nesciunt hic nulla, consectetur blanditiis adipisci optio voluptas sit, tenetur alias error omnis et. Illo alias modi nisi nemo officia neque repellat, atque repudiandae qui voluptatum laboriosam, dolorem, nobis quidem ab impedit dicta sint quo adipisci minus est cum minima dolores sit. Dolores similique dolor soluta placeat harum!</p>
+                </div>
+                <div class="columnCardVeille">
+
+                    <div class="cardVeille">
+                        <img src='https://images.unsplash.com/photo-1612889047716-3128cdd3ce58?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85' alt=''>
+                        <a href="">Nouvelle carte graphique</a>
+                    </div>
+
+                    <div class="cardVeille">
+                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
+                        <a href="">Nouvelle carte graphique</a>
+                    </div>
+
+                    <div class="cardVeille">
+                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
+                        <a href="">Nouvelle carte Lorem ipsum dolor sit amet.</a>
+                    </div>
+
+                    <div class="cardVeille">
+                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
+                        <a href="">Nouvelle carte graphique</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <span id="btnVeilleTechno" class="hoverBtnVeille">
+                <i class="fas fa-space-shuttle fa-2x"></i>
+            </span>
+        </div>
 		<div id="main">
 			
 			<section id="profil" class="not-visible effet">

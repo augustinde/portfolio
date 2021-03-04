@@ -69,7 +69,7 @@
             <div class="contentSidebar">
                 <h2>Veille technologique</h2>
                 <div class="textVeille">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt blanditiis dolorum accusamus, perferendis nihil nemo voluptate. Vero, non labore! Sint eaque cupiditate blanditiis quod quidem, laborum inventore neque. Officia modi velit sunt laudantium, possimus nemo harum quis voluptatum, nesciunt nam fugit. Asperiores ipsa numquam vero totam harum id recusandae necessitatibus beatae nostrum nesciunt hic nulla, consectetur blanditiis adipisci optio voluptas sit, tenetur alias error omnis et. Illo alias modi nisi nemo officia neque repellat, atque repudiandae qui voluptatum laboriosam, dolorem, nobis quidem ab impedit dicta sint quo adipisci minus est cum minima dolores sit. Dolores similique dolor soluta placeat harum!</p>
+                    <p>Afin d'assurer une veille technologique, j'ai mis en place un agrégateur de flux RSS et mis en place un automatisme de web scraping pour la récupération d'articles lorsque qu'aucun flux RSS n'était disponible. Voici les mutliples articles qui on attiré mon attention :</p>
                 </div>
                 <div class="columnCardVeille">
 

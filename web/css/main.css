@@ -600,6 +600,11 @@ img.primaryImageModal{
 	position: relative;
 	margin-right:20px;
 	margin-bottom:20px;
+	transition:all 0.4s ease-in-out 0.1s;
+}
+
+.cardProjet:hover{
+	transform:translatey(-10px);
 }
 
 .cardProjet img{

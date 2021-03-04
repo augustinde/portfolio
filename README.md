@@ -2,7 +2,6 @@
 
   * Project module
     * Modify modal
-    * Animate card on hover
     * Correct the responsive cards
     * In admin
       * Correct add projet

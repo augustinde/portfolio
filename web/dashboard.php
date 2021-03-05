@@ -47,8 +47,6 @@
         <div class="flexSidebar">
 
             <a href="../admin/gestion-projets.php"><i class="fas fa-project-diagram"></i> Gestion des projets</a>
-            <a href=""><i class="fas fa-laptop-code"></i> Veuille info</a>
-            <a href=""><i class="fas fa-balance-scale"></i> Veuille juridique</a>
 
         </div>
 

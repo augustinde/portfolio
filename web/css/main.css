@@ -643,20 +643,35 @@ img.primaryImageModal{
 
 }
 
-.spanTechnologies, .spanCompetences {
+.spanTechnologies, .spanCompetences, .lienModal {
 
-	background-color: #17202A;
+	background-color: #fff;
 	padding:5px;
 	margin-right:8px;
 	margin-top:10px;
 	font-size: 12px;
-	color:#fff;
+	color:#17202A;
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 5px;
 
 }
 
+.lienModal{
+	text-decoration: none;
+}
 
+#urlModal{
+	display: flex;
+	flex-direction: column;
+}
+
+#urlModal .urlModalChild{
+	margin-bottom:10px;
+}
+
+#urlModal h3{
+	margin-bottom:10px;
+}
 
 /*Modal projet*/
 .effetModalProjet{
@@ -670,15 +685,15 @@ img.primaryImageModal{
 	display: block;
 	opacity:1;
 	animation-name: bounceIn;
-	animation-duration: 450ms;
-	animation-timing-function: linear;
+	animation-duration: 300ms;
+	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 }
 
 .hideModalProjet{
 	animation-name: bounceOut;
-	animation-duration: 450ms;
-	animation-timing-function: linear;
+	animation-duration: 200ms;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
@@ -696,13 +711,10 @@ img.primaryImageModal{
 
 .contentModal{
 
-	border-bottom-left-radius: 20px;
-	border-top-right-radius: 20px;
 	width:70%;
 	height: auto;
 	padding-bottom: 20px;
-	background-color: #fff;
-	display: block;
+	opacity: 1;
 	margin-left: auto;
 	margin-right: auto;
 	position: absolute;
@@ -717,7 +729,6 @@ img.primaryImageModal{
 	padding: 20px;
 	text-align: center;
 	color:#fff;
-	border-top-right-radius: 20px;
 
 }
 
@@ -740,6 +751,8 @@ img.primaryImageModal{
 
 #bodyModalId{
 	font-size: 16px;
+	padding-bottom:20px;
+	background-color: #fff;
 }
 
 .rowModal{
@@ -747,6 +760,15 @@ img.primaryImageModal{
 	flex-direction: row;
 	padding:10px 20px 0px 20px;
 	justify-content: space-around;
+}
+
+.rowModal > *{
+	flex:1 1 0;
+	margin:0 5px;
+}
+
+.rowModal1 #technologiesModal, .rowModal1 #competencesModal, .rowModal1 #urlModal {
+	margin-top:10px;
 }
 
 .columnModal{
@@ -760,19 +782,24 @@ img.primaryImageModal{
 	padding: 0 10px;
 }
 
-.columnGalleryModal{
-	flex-grow: 1;
+#technologiesModal, #urlModal{
+	text-align: left;
 }
 
-#technologiesModal, #urlModal{
-	width:25%;
-	text-align: center;
+#technologiesModal, #competencesModal, .urlModalChild{
+	border-radius: 8px;
+	background-color:#17202A;
+	color:#fff;
+	padding:10px;
 }
 
 #competencesModal{
-	width:50%;
-	text-align: center;
+	text-align: left;
 
+}
+
+#titreUrlProjet{
+	margin-top:10px;
 }
 
 #listCompetenceModal, #listTechnologieModal{
@@ -785,31 +812,24 @@ img.primaryImageModal{
 @keyframes bounceIn{
 	0%{
 		opacity: 0;
-		transform: scale(0.3) translate3d(0,0,0);
+		transform: translateX(-100%);
 	}
-	50%{
-		opacity: 0.9;
-		transform: scale(1.1);
-	}
+
 	100%{
 		opacity: 1;
-		transform: scale(1) translate3d(0,0,0);
+		transform: translateX(0%);
 	}
 }
 
 @keyframes bounceOut{
 	0%{
 		opacity: 1;
-		transform: scale(1) translate3d(0,0,0);
+		transform: translateX(0%);
 	}
-	50%{
-		opacity: 0.9;
-		transform: scale(1.1);
-	}
+
 	100%{
 		opacity: 0;
-		transform: scale(0.3) translate3d(0,0,0);
-		display: none;
+		transform: translateX(100%);
 	}
 }
 
@@ -1619,17 +1639,16 @@ footer .iconFooter a:hover{
 	}
 
 	.contentModal{
-		width:90%;
 		height: 100%;
 		overflow: auto;
-	}
-	
-	.rowModal{
-		flex-direction: column;
 	}
 
 	.rowModal1{
 		flex-direction: row;
+	}
+
+	.rowModal{
+		flex-direction: column;
 	}
 
 	.columnGalleryModal{
@@ -1768,24 +1787,21 @@ footer .iconFooter a:hover{
 
 	.columnGalleryModal{
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
-	}
-
-	.testGallery{
 		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 10px;
 	}
 
 	#descriptionModal{
-		text-align: center;
+		padding: 0;
+	}
+
+	.testGallery{
+		flex-direction: row;
 	}
 
 	#technologiesModal, #competencesModal, #urlModal{
 		width:100%;
-	}
-
-	#listCompetenceModal, #listTechnologieModal{
-		justify-content: center;
 	}
 
 }

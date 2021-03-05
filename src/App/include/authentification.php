@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-include "../db.php";
+include "db.php";
 
 $url = $_SERVER["REQUEST_URI"];
 // if(!empty($_SESSION["pseudo"])){//si ya la session

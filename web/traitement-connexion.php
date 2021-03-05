@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "db.php";
+    require "../src/App/include/db.php";
 
     if(!empty($_POST["inputPassword"])){
 

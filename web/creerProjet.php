@@ -61,9 +61,6 @@ if($ifProjetExist == null) {
         $targetDir = "images/Projets/";
         $targetFile = $targetDir . basename($_FILES['imageUpload']['name'][$i]);
 
-        $uploadIsReady = true;
-        $insertionIsOk = true;
-
         /*
          * Récupération de l'extension de l'image
          * Modification du nom de l'image avec la première lettre de chaque mot en maj et suppression des espaces
@@ -103,7 +100,7 @@ if($ifProjetExist == null) {
                 * Vérification de la taille de l'image
                 */
 
-                if ($_FILES["imageUpload"]["size"][$i] > 500000) {
+                if ($_FILES["imageUpload"]["size"][$i] > 5000000) {
 
                     $uploadIsReady = false;
                     $message_image[] = "Taille de l'image " . $_FILES["imageUpload"]["name"][$i] . " non valide (" . $_FILES["imageUpload"]["size"][$i] . ")";
@@ -150,7 +147,60 @@ if($ifProjetExist == null) {
             if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"][$i], $targetFile)) {
 
                 $message_uploadImage[] = "Image " . $_FILES["imageUpload"]["name"][$i] . " uploadé.";
-                $uploadIsOk = true;
+
+                //Insertion en BDD
+
+                $image = new Image();
+                $image->setCheminImage($targetFile);
+
+                $imageManager = new ImageManager();
+                $saveImgIsOk = $imageManager->save($image);
+
+                $message_insertionImage = [];
+
+                if ($saveImgIsOk) {
+
+                    $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " a été insérée en base de donnée TABLE = images";
+                    $images[] = $imageManager->getLastId();
+
+                    /*
+                    * Ajout du projet en base de donnée
+                    */
+
+                    $projet = new Projet();
+
+
+                    if ($urlProjet == "") {
+                        $urlProjet = null;
+                    }
+
+                    if ($urlDocFournit == "") {
+                        $urlDocFournit = null;
+                    }
+                    $projet->setNom($nomProjet);
+                    $projet->setDescription($descriptionProjet);
+                    $projet->setUrlDocFournit($urlDocFournit);
+                    $projet->setUrlProjet($urlProjet);
+                    $projet->setArrayTechno($technologies);
+                    $projet->setArrayCompetence($competences);
+                    $projet->setArrayImage($images);
+
+                    $projetManager = new ProjetManager();
+                    $saveIsOk = $projetManager->save($projet);
+
+                    if ($saveIsOk) {
+                        $message_ajoutProjet = "Le projet est sauvegardé en base de donnée.";
+                    } else {
+                        $message_ajoutProjet = "Le projet n\'est pas sauvegardé en base de donnée.";
+                    }
+
+                } else {
+
+                    $message_insertionImage = [];
+                    $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " n'a pas été insérée en base de donnée TABLE = images";
+
+                }
+
 
             } else {
 
@@ -167,63 +217,8 @@ if($ifProjetExist == null) {
 
         }
 
-        if ($uploadIsOk) {
-
-            //Insertion en BDD
-
-            $image = new Image();
-            $image->setCheminImage($targetFile);
-
-            $imageManager = new ImageManager();
-            $saveImgIsOk = $imageManager->save($image);
-
-            $message_insertionImage = [];
-
-            if ($saveImgIsOk) {
-
-                $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " a été insérée en base de donnée TABLE = images";
-                $images[] = $imageManager->getLastId();
-
-            } else {
-
-                $message_insertionImage = [];
-                $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " n'a pas été insérée en base de donnée TABLE = images";
-
-            }
-
-        }
-
-    }
-
-    /*
-    * Ajout du projet en base de donnée
-    */
-
-    $projet = new Projet();
 
 
-    if ($urlProjet == "") {
-        $urlProjet = null;
-    }
-
-    if ($urlDocFournit == "") {
-        $urlDocFournit = null;
-    }
-    $projet->setNom($nomProjet);
-    $projet->setDescription($descriptionProjet);
-    $projet->setUrlDocFournit($urlDocFournit);
-    $projet->setUrlProjet($urlProjet);
-    $projet->setArrayTechno($technologies);
-    $projet->setArrayCompetence($competences);
-    $projet->setArrayImage($images);
-
-    $projetManager = new ProjetManager();
-    $saveIsOk = $projetManager->save($projet);
-
-    if ($saveIsOk) {
-        $message_ajoutProjet = "Le projet est sauvegardé en base de donnée.";
-    } else {
-        $message_ajoutProjet = "Le projet n\'est pas sauvegardé en base de donnée.";
     }
 
 }else{

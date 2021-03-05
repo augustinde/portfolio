@@ -1,4 +1,4 @@
-<?php include "include/authentification.php"; ?>
+<?php include "../src/App/include/authentification.php"; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,8 +47,6 @@
         <div class="flexSidebar">
 
             <a href="gestion-projets.php"><i class="fas fa-project-diagram"></i> Gestion des projets</a>
-            <a href=""><i class="fas fa-laptop-code"></i> Veuille info</a>
-            <a href=""><i class="fas fa-balance-scale"></i> Veuille juridique</a>
 
         </div>
 
@@ -59,14 +57,3 @@
 
 </body>
 </html>
-
-<!-- 
-
-acceuil
-gestion projet
-gestion veuille info
-todo
-
-
-
- -->

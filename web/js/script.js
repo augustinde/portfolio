@@ -113,7 +113,13 @@ function animScrollCircle(){
 
 
 //Eléments modal
+let modalElt = document.getElementById("modalProjetId");
 
+modalElt.addEventListener("click", function(e){
+    if(e.target === modalElt){
+        closeModalFunction();
+    }
+});
 
 //Fonction fermeture du modal
 function closeModalFunction(){
@@ -123,22 +129,13 @@ function closeModalFunction(){
 
     modalProjet.classList.add('hideModalProjet');
 
-    console.log("1");
-    console.log(contentModal);
-
     setTimeout(() => {
-
-        console.log("2");
-        console.log(contentModal);
 
         modalProjet.classList.remove('visibleModalProjet');
         modalProjet.classList.remove('hideModalProjet');
-        modalProjet.removeChild(contentModal);
+        modalProjet.innerHTML = "";
 
-        console.log("3");
-        console.log(contentModal);
-
-    },300);
+    },400);
 
 }
 
@@ -153,14 +150,6 @@ function affichageImageModal() {
 function requestViewProjet(id){
 
     let xmlhttp = new XMLHttpRequest();
-    const modalElt = document.getElementById("modalProjetId");
-
-    modalElt.addEventListener("click", function(e){
-        if(e.target === modalElt){
-            closeModalFunction();
-        }
-    });
-
 
     let contentModal = document.createElement("div");
     contentModal.setAttribute("id", "ctModal");
@@ -248,6 +237,8 @@ function requestViewProjet(id){
             let urlModal = document.createElement("div");
             urlModal.setAttribute("id", "urlModal");
 
+            let urlModalDocFournit = document.createElement("div");
+            urlModalDocFournit.setAttribute("class", "urlModalChild");
 
 
             let titreUrlDocFournit = document.createElement("h3");
@@ -262,6 +253,14 @@ function requestViewProjet(id){
             contenuUrlDocFournit.target = "_blank";
             contenuUrlDocFournit.setAttribute("class", "lienModal");
 
+            urlModalDocFournit.appendChild(titreUrlDocFournit);
+            urlModalDocFournit.appendChild(contenuUrlDocFournit);
+
+            urlModal.appendChild(urlModalDocFournit);
+
+
+            let urlModalDocProjet = document.createElement("div");
+            urlModalDocProjet.setAttribute("class", "urlModalChild");
 
 
             let titreUrlProjet = document.createElement("h3");
@@ -272,16 +271,14 @@ function requestViewProjet(id){
 
             let contenuUrlProjet = document.createElement("a");
             contenuUrlProjet.href = urlProjet;
-            contenuUrlProjet.text = "Lien de document(s) fournis";
+            contenuUrlProjet.text = "Document(s) fournis";
             contenuUrlProjet.target = "_blank";
             contenuUrlProjet.setAttribute("class", "lienModal");
 
-            urlModal.appendChild(titreUrlDocFournit);
-            urlModal.appendChild(contenuUrlDocFournit);
+            urlModalDocProjet.appendChild(titreUrlProjet);
+            urlModalDocProjet.appendChild(contenuUrlProjet);
 
-            urlModal.appendChild(titreUrlProjet);
-            urlModal.appendChild(contenuUrlProjet);
-
+            urlModal.appendChild(urlModalDocProjet);
 
             //Partie technologies
             let technologiesModal = document.createElement("div");
@@ -392,7 +389,6 @@ function requestViewProjet(id){
             contentModal.appendChild(headerModalElt);
             contentModal.appendChild(bodyModalElt);
             modalElt.appendChild(contentModal);
-
         }
     };
 

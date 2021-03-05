@@ -184,98 +184,16 @@
 			<section id="techno" class="not-visible effet">
 				
 				<h1>Technologies</h1>
-				<br>
-				<br>
-                <br>
-
-				<!--<div class="containerTechno">
-                    <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-						<circle class="circle-chart__background" stroke="#efefef" stroke-width="1" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<circle class="circle-chart__circle" stroke="#FF5722" stroke-width="2" stroke-dasharray="100" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<g class="circle-chart__info">
-							<text class="circle-chart__percent" x="16.91549431" fill="#ff5722" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6">HTML</text>
-							<text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="4">100%</text>
-						</g>
-					</svg>
-
-					<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-						<circle class="circle-chart__background" stroke="#efefef" stroke-width="1" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<circle class="circle-chart__circle" stroke="#0276BC" stroke-width="2" stroke-dasharray="100" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<g class="circle-chart__info">
-							<text class="circle-chart__percent" x="16.91549431" fill="#0276BC" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6">CSS</text>
-							<text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="4">100%</text>
-						</g>
-					</svg>
-
-					<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-						<circle class="circle-chart__background" stroke="#efefef" stroke-width="1" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<circle class="circle-chart__circle" stroke="#DEA33D" stroke-width="2" stroke-dasharray="80" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<g class="circle-chart__info">
-							<text class="circle-chart__percent" x="16.91549431" fill="#DEA33D" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6">JS</text>
-							<text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="4">80%</text>
-						</g>
-					</svg>
-
-					<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-						<circle class="circle-chart__background" stroke="#efefef" stroke-width="1" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<circle class="circle-chart__circle" stroke="#788BC5" stroke-width="2" stroke-dasharray="70" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<g class="circle-chart__info">
-							<text class="circle-chart__percent" x="16.91549431" fill="#788BC5" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6">PHP</text>
-							<text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="4">70%</text>
-						</g>
-					</svg>
-
-					<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-						<circle class="circle-chart__background" stroke="#efefef" stroke-width="1" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<circle class="circle-chart__circle" stroke="#014462" stroke-width="2" stroke-dasharray="70" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-						<g class="circle-chart__info">
-							<text class="circle-chart__percent" x="16.91549431" fill="#014462" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6">SQL</text>
-							<text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="4">70%</text>
-						</g>
-					</svg>
-				</div>-->
 
                 <div class="containerTechno">
 
-                    <div class="technoItem">
-                        <img src="images/html5.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/CSS3.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/JavaScript.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/mysql.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/php.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/nodejs.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/logo-symfony.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/csharp.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/unity.png" alt="">
-                    </div>
-
-                    <div class="technoItem">
-                        <img src="images/java.png" alt="">
-                    </div>
+                    <img class="technoItem" src="images/html5.png" alt="">
+                    <img class="technoItem" src="images/CSS3.png" alt="">
+                    <img class="technoItem" src="images/JavaScript.png" alt="">
+                    <img class="technoItem" src="images/mysql.png" alt="">
+                    <img class="technoItem" src="images/php.png" alt="">
+                    <img class="technoItem" src="images/logo-symfony.png" alt="">
+                    <img class="technoItem" src="images/csharp.png" alt="">
 
                 </div>
 				

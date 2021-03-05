@@ -249,7 +249,7 @@ function requestViewProjet(id){
 
             let contenuUrlDocFournit = document.createElement("a");
             contenuUrlDocFournit.href = urlDocFournit;
-            contenuUrlDocFournit.text = "Lien du projet";
+            contenuUrlDocFournit.innerHTML = "<i class='fas fa-project-diagram'></i> Lien du projet";
             contenuUrlDocFournit.target = "_blank";
             contenuUrlDocFournit.setAttribute("class", "lienModal");
 
@@ -271,7 +271,7 @@ function requestViewProjet(id){
 
             let contenuUrlProjet = document.createElement("a");
             contenuUrlProjet.href = urlProjet;
-            contenuUrlProjet.text = "Document(s) fournis";
+            contenuUrlProjet.innerHTML = "<i class='fas fa-project-diagram'></i> Document(s) fournis";
             contenuUrlProjet.target = "_blank";
             contenuUrlProjet.setAttribute("class", "lienModal");
 

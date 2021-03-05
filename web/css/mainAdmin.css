@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+*, ::before, ::after{
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+}
+
 body{
 	padding: 0;
 	margin: 0;
@@ -9,112 +15,10 @@ body{
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
+	background-color: #fff;
 
 }
 
-#form{
-	background-color: #17202A;
-	width:50vh;
-	height: 50vh;
-	border-top-right-radius: 150px;
-	border-bottom-left-radius: 150px;
-	color:#fff;
-	box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.7);
-	text-align:center;
-	padding:20px;
-}
-
-form{
-	height: 70%;
-}
-
-#form h1{
-	letter-spacing: 1px;
-	text-transform: uppercase;
-}
-
-#form .colForm{
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-#form .colForm input{
-	outline:none;
-	border:none;
-	padding:16px;
-	font-size:16px;
-}
-
-.divInput{
-	margin-bottom: 40px;
-	width:100%;
-	max-width:400px;
-	position: relative;
-}
-
-.divInput input{
-	position: relative;
-	width:100%;
-	box-sizing: border-box;
-}
-
-input[type=submit]{
-	border:none;
-	outline:none;
-	padding:16px;
-	font-size:18px;
-	width:100%;
-	max-width: 300px;
-	border-bottom-left-radius: 150px;
-	border-top-right-radius: 150px;
-	cursor: pointer;
-	transition:all 0.4s ease;
-
-}
-
-input[type=submit]:hover{
-
-	border-bottom-left-radius: 0px;
-	border-top-right-radius: 0px;
-	border-top-left-radius: 150px;
-	border-bottom-right-radius: 150px;
-
-}
-
-
-.divInput label{
-	position: absolute;
-	bottom:15px;
-	left:15px;
-	z-index: 5;
-	color:#17202A;
-	transition:all 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
-}
-
-
-.divInput label.anim-label{
-	color:#fff;
-	transform:translate(0px, -40px);
-	left:0px;
-	font-size:14px;
-}
-
-.divInput i{
-	position: absolute;
-	right:15px;
-	top:16px;
-	color:#17202A;
-	cursor: pointer;
-	transition:color 0.5s ease;
-}
-
-.divInput i:hover{
-	color:#263342;
-}
 
 
 .divCheckbox input{
@@ -277,62 +181,244 @@ input[type=submit]:hover{
 	
 }
 
-#sidebar{
-	position: absolute;
+
+/*
+
+	START SIDEBAR
+
+ */
+
+#containerSidebar{
+	height:100%;
+	width:40%;
+	padding-left:100px;
+	background-color:#17202A;
+	position:fixed;
 	top:0;
 	left:0;
-	background-color: #17202A;
-	width:250px;
-	height:100vh;
-	color:#fff;
-	padding:20px;
-	box-sizing: border-box;
+	transform:translatex(-100%);
+	transition:all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	z-index:10;
+	box-shadow:3px 3px 8px 0px rgb(0 0 0 / 50%);
 }
 
-#sidebar .flexSidebar{
+#containerSidebar.toggleSidebar{
+	transform:translateX(0%);
+	left:-100px;
+
+}
+
+
+#btnVeilleTechno{
+	background-color:#17202A;
+	border-bottom-right-radius:10px;
+	border-top-right-radius:10px;
+	top:0px;
+	position:absolute;
+	right:-60px;
+	cursor:pointer;
+	z-index:9;
+	transition:all 0.3s ease;
+	box-shadow:3px 3px 8px 0px rgb(0 0 0 / 25%);
+	width:70px;
+	height:62px;
+}
+
+.hoverBtnVeille:hover {
+	transform:translatex(5px);
+}
+
+#btnVeilleTechno i{
+	color:#fff;
+	transform:rotate(-40deg);
+	transition:all 0.3s ease-in-out;
+	margin:12px 20px 10px 22px;
+
+}
+
+#btnVeilleTechno.changeIconBtnVeille i{
+	transform:rotate(0deg);
+	margin:15px 15px 15px 27px;
+
+}
+
+.changeIconBtnVeille i::before{
+	content:"\f00d";
+	transition:all 0.5s ease;
+
+}
+
+.changeIconBtnVeille i:hover .changeIconBtnVeille i::before{
+	transform:rotate(90deg);
+}
+
+.contentSidebar{
+	background-color:#17202A;
+	position:relative;
+	transition:all 0.1s ease;
+	z-index:10;
+	height:100%;
+	overflow-y:auto;
+	padding:40px;
 	display: flex;
 	flex-direction: column;
 
 }
 
-#sidebar .flexSidebar a{
-	margin-bottom: 20px;
-	text-decoration: none;
-	cursor: pointer;
+.contentSidebar::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+.contentSidebar::-webkit-scrollbar:vertical {
+	width: 8px;
+	background-color:rgba(7, 81, 135,0.5);
+}
+
+.contentSidebar::-webkit-scrollbar-thumb {
+	border: 1px solid transparent;
+	background-color: #fff;
+}
+
+
+.screenSidebar{
+	height:100%;
+	width:100%;
+	background-color:rgba(23,32,42,0.6);
+	position:absolute;
+	top:0;
+	left:0;
+	transform:translatex(-100%);
+	transition:all 0.2s ease-in-out 0.2s;
+	z-index:10;
+}
+
+.itemSidebar{
+
+	border-radius: 8px;
+	padding:20px;
 	color:#fff;
-	transition:all 0.8s ease;
-	position: relative;
-}
-
-
-#sidebar .flexSidebar a:hover{
-	transform: translate(20px, 0%);
-}
-
-
-#sidebar .flexSidebar a i{
-	font-size:20px;
-
-}
-
-
-#sidebar a{
-	margin-bottom: 20px;
 	text-decoration: none;
-	cursor: pointer;
-	color:#fff;
-	transition:all 0.8s ease;
+	margin-bottom:20px;
+	font-weight: bold;
+	transition:all 0.3s ease-in-out;
+}
+
+.itemSidebar:hover{
+	background-color:#fff;
+	color:#17202A;
+}
+
+.itemDecoSidebar{
 	position: absolute;
-	bottom:0px;
+	bottom:0;
+}
+
+/*
+
+	END SIDEBAR
+
+ */
+
+/*
+
+	START FORM ADD PROJECT
+
+ */
+
+.mainForm{
+
+	width:80%;
+	height: auto;
+	background-color:rgba(255,255,255,0.7);
+	border-radius: 25px;
+	margin:auto;
+	padding:20px;
+	box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.5);
+}
+
+.mainForm h2{
+	text-align: center;
+	margin-bottom:20px;
+}
+
+.group-input{
+	margin-bottom: 10px;
+	width:100%;
+	max-width:400px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.group-input input, textarea{
+	position: relative;
+	width:100%;
+	border-radius: 5px;
+	outline: none;
+	border:2px solid #17202A;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+.group-input label{
+	position: relative;
+	color:#17202A;
+	margin-bottom: 5px;
 }
 
 
-#sidebar a:hover{
-	transform: translate(20px, 0%);
+/*
+
+	END FORM ADD PROJECT
+
+ */
+
+
+/*
+
+	RESPONSIVE
+
+*/
+
+@media (max-width: 575.98px) {
+
+	#containerSidebar{
+		width:100%;
+		font-size: 14px;
+	}
+
+	#containerSidebar.toggleSidebar{
+		transform:translateX(0%);
+	}
+
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
 
-#sidebar a i{
-	font-size:20px;
+	#containerSidebar{
+		width:70%;
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+	#containerSidebar{
+		width:50%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px){
+
+	#containerSidebar{
+		width:50%;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	#containerSidebar{
+		width:35%;
+	}
 
 }

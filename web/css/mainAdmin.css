@@ -360,12 +360,68 @@ body{
 	margin-bottom:10px;
 }
 
+.group-input input[type="file"]{
+	display: none;
+}
+
 .group-input label{
 	position: relative;
 	color:#17202A;
 	margin-bottom: 5px;
 }
 
+.group-input .labelFile {
+	padding: 10px;
+	background-color: #17202A;
+	border: none;
+	outline: none;
+	color:#fff;
+	cursor: pointer;
+	font-weight: bold;
+	width:max-content;
+}
+
+.col-input{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	height: 0px;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+
+.group-checkbox{
+
+	padding: 10px;
+
+}
+
+.group-checkbox label{
+	padding-left:5px;
+}
+
+.btnCollapseCompetence, .btnCollapseTechnologie{
+	cursor: pointer;
+	border:none;
+	outline: none;
+	background-color: #17202A;
+	color:#fff;
+	width:fit-content;
+	padding:10px;
+}
+
+.expandCollapse{
+	height: 100%;
+}
+
+#previewFileDiv{
+	width:100%;
+	height: auto;
+}
+
+#imgPreview{
+	width:inherit;
+}
 
 /*
 

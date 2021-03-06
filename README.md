@@ -6,7 +6,6 @@
       * Correct edit projet
   * Contact module
     * Correct form
-    * Add map
     * Add contact information
     * Management of the sending of the form
   * Other

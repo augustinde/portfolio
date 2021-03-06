@@ -1,4 +1,22 @@
-<?php require_once "../src/App/include/authentification.php"; ?>
+<?php
+
+    require_once "../src/App/include/authentification.php";
+
+    require_once "../src/App/Entity/Competence.php";
+    require_once "../src/App/Manager/CompetenceManager.php";
+    require_once "../src/App/Entity/Technologie.php";
+    require_once "../src/App/Manager/TechnologieManager.php";
+
+    use App\Manager\CompetenceManager;
+    use App\Manager\TechnologieManager;
+
+    $competenceManager = new CompetenceManager();
+    $competences = $competenceManager->readall();
+
+    $technologieManager = new TechnologieManager();
+    $technologies = $technologieManager->readall();
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -65,7 +83,7 @@
 
             <div class="rowForm">
 
-                <div class="input">
+                <div class="inforProjetInput">
 
                     <div class="group-input">
 
@@ -98,15 +116,64 @@
                     </div>
 
                     <div class="group-input">
+                        <form>
+                            <label class="labelFile" for="imageUpload">Image(s)</label>
+                            <input type="file" accept="image/jpeg, image/jpg" name="imageUpload[]" id="imageUpload" multiple>
+                            <div id="previewFileDiv">
+                                <img id="imgPreview" src="#" alt="">
+                            </div>
+                        </form>
 
-                        <label for="imageUpload">Image </label>
-                        <input type="file" accept="image/jpeg, image/jpg" name="imageUpload[]" id="imageUpload" multiple>
-                        <div id="previewFile">
+                    </div>
 
-                        </div>
+                    <div class="group-input">
+                        <button class="btnCollapseCompetence">Ajouter des compétences</button>
+                    </div>
+
+                    <div class="col-input collapseCompetence">
+
+                        <?php
+
+                        if($competences === false){
+                            echo "Erreur compétences";
+                        }else{
+                            foreach($competences as $competence){
+                                echo "<div class=\"group-checkbox\">";
+                                echo "<input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"><label for=\"" . $competence->getLibelle() . "\">" . $competence->getLibelle() . "</label><br><br>";
+                                echo "</div>";
+                            }
+                        }
+
+                        ?>
+
+                    </div>
+
+                    <div class="group-input">
+                        <button class="btnCollapseTechnologie">Ajouter des technologies</button>
+                    </div>
+
+                    <div class="col-input collapseTechnologie">
+
+                        <?php
+
+                        if($technologies === false){
+                            echo "Erreur technologies";
+                        }else{
+                            foreach($technologies as $technologie){
+                                echo "<div class=\"group-checkbox\">";
+                                echo "<input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\">" . $technologie->getLibelle() . "</label><br><br>";
+                                echo "</div>";
+
+                            }
+                        }
+
+                        ?>
+
                     </div>
 
                 </div>
+
+
             </div>
         </form>
 

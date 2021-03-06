@@ -23,4 +23,22 @@ document.getElementById("btnVeilleTechno").addEventListener("click", () => {
 
 });
 
+document.querySelector(".btnCollapseCompetence").addEventListener("click", (e) => {
 
+    e.preventDefault();
+    document.querySelector(".collapseCompetence").classList.toggle("expandCollapse");
+
+});
+
+document.querySelector(".btnCollapseTechnologie").addEventListener("click", (e) => {
+
+    e.preventDefault();
+    document.querySelector(".collapseTechnologie").classList.toggle("expandCollapse");
+
+});
+
+document.querySelector("#imageUpload").addEventListener("change", (e) => {
+
+    document.querySelector("#imgPreview").setAttribute("src", URL.createObjectURL(event.target.files[0]));
+
+});

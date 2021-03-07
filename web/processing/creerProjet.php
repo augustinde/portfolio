@@ -82,7 +82,7 @@ if($ifProjetExist == null) {
          * Initialisation variable
          */
 
-        $targetDir = "../images/Projets/";
+        $targetDir = "images/Projets/";
         $targetFile = $targetDir . basename($_FILES['imageUpload']['name'][$i]);
 
         /*
@@ -110,7 +110,7 @@ if($ifProjetExist == null) {
              * Vérifie si l'image existe déjà
              */
 
-            if (file_exists($targetFile)) {
+            if (file_exists("../".$targetFile)) {
 
                 $uploadIsReady = false;
                 $message_image[] = "IMG_E_EXIST : " . $_FILES["imageUpload"]["name"][$i];
@@ -168,7 +168,7 @@ if($ifProjetExist == null) {
 
             $message_uploadImage = [];
 
-            if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"][$i], $targetFile)) {
+            if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"][$i], "../".$targetFile)) {
 
                 $message_uploadImage[] = "IMG_S_UPLOAD : " . $_FILES["imageUpload"]["name"][$i];
 

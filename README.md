@@ -2,7 +2,6 @@
 
   * Project module
     * In admin
-      * Correct add projet
       * Correct edit projet
   * Contact module
     * Correct form

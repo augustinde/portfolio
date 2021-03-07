@@ -81,101 +81,124 @@
         <h2>Ajouter un projet</h2>
         <form id="form" enctype="multipart/form-data">
 
-            <div class="rowForm">
+            <div class="colForm">
 
-                <div class="inforProjetInput">
+                <div class="group-input">
 
-                    <div class="group-input">
+                    <input type="hidden" id="idProjet" name="idProjet">
 
-                        <input type="hidden" id="idProjet" name="idProjet">
+                    <label for="nom">Nom du projet </label>
+                    <input type="text" name="nom" id="nom">
 
-                        <label for="nom">Nom du projet </label>
-                        <input type="text" name="nom" id="nom">
+                </div>
 
-                    </div>
+                <div class="group-input">
 
-                    <div class="group-input">
+                    <label for="description">Description </label>
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                    <!-- ajout limite de 300 caracteres-->
+                </div>
 
-                        <label for="description">Description </label>
-                        <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                        <!-- ajout limite de 300 caracteres-->
-                    </div>
+                <div class="group-input">
 
-                    <div class="group-input">
+                    <label for="urlDocFournit">Url des documents fournis (laisser vide sinon) </label>
+                    <input type="text" name="urlDocFournit" id="urlDocFournit">
 
-                        <label for="urlDocFournit">Url des documents fournis (laisser vide sinon) </label>
-                        <input type="text" name="urlDocFournit" id="urlDocFournit">
+                </div>
 
-                    </div>
+                <div class="group-input">
 
-                    <div class="group-input">
+                    <label for="urlProjet">Url projet (laisser vide sinon) </label>
+                    <input type="text" name="urlProjet" id="urlProjet">
 
-                        <label for="urlProjet">Url projet (laisser vide sinon) </label>
-                        <input type="text" name="urlProjet" id="urlProjet">
+                </div>
 
-                    </div>
+                <div class="group-input">
+                    <form>
+                        <label class="labelFile" for="imageUpload">Image(s)</label>
+                        <input type="file" accept="image/jpeg, image/jpg" name="imageUpload[]" id="imageUpload" multiple>
+                        <div id="previewFileDiv">
 
-                    <div class="group-input">
-                        <form>
-                            <label class="labelFile" for="imageUpload">Image(s)</label>
-                            <input type="file" accept="image/jpeg, image/jpg" name="imageUpload[]" id="imageUpload" multiple>
-                            <div id="previewFileDiv">
-                                <img id="imgPreview" src="#" alt="">
-                            </div>
-                        </form>
+                        </div>
+                    </form>
 
-                    </div>
+                </div>
 
-                    <div class="group-input">
-                        <button class="btnCollapseCompetence">Ajouter des compétences</button>
-                    </div>
+                <div class="group-input">
+                    <button class="btnCollapseCompetence">Ajouter des compétences</button>
+                </div>
 
-                    <div class="col-input collapseCompetence">
+                <div class="col-input collapseCompetence">
 
-                        <?php
+                    <?php
 
-                        if($competences === false){
-                            echo "Erreur compétences";
-                        }else{
-                            foreach($competences as $competence){
-                                echo "<div class=\"group-checkbox\">";
-                                echo "<input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"><label for=\"" . $competence->getLibelle() . "\">" . $competence->getLibelle() . "</label><br><br>";
-                                echo "</div>";
-                            }
+                    if($competences === false){
+                        echo "Erreur compétences";
+                    }else{
+                        foreach($competences as $competence){
+                            echo "<div class=\"group-checkbox\">";
+                            echo "<input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"><label for=\"" . $competence->getLibelle() . "\">" . $competence->getLibelle() . "</label><br><br>";
+                            echo "</div>";
                         }
+                    }
 
-                        ?>
+                    ?>
 
-                    </div>
+                </div>
 
-                    <div class="group-input">
-                        <button class="btnCollapseTechnologie">Ajouter des technologies</button>
-                    </div>
+                <div class="group-input">
+                    <button class="btnCollapseTechnologie">Ajouter des technologies</button>
+                </div>
 
-                    <div class="col-input collapseTechnologie">
+                <div class="col-input collapseTechnologie">
 
-                        <?php
+                    <?php
 
-                        if($technologies === false){
-                            echo "Erreur technologies";
-                        }else{
-                            foreach($technologies as $technologie){
-                                echo "<div class=\"group-checkbox\">";
-                                echo "<input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\">" . $technologie->getLibelle() . "</label><br><br>";
-                                echo "</div>";
+                    if($technologies === false){
+                        echo "Erreur technologies";
+                    }else{
+                        foreach($technologies as $technologie){
+                            echo "<div class=\"group-checkbox\">";
+                            echo "<input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\">" . $technologie->getLibelle() . "</label><br><br>";
+                            echo "</div>";
 
-                            }
                         }
+                    }
 
-                        ?>
+                    ?>
 
-                    </div>
+                </div>
+                <br>
+                <div class="group-input">
+                    <button id="btnSubmitProject" class="input-button" type="button">Ajouter</button>
+                </div>
+
+                <div id="affichageResultat">
 
                 </div>
 
 
             </div>
         </form>
+
+    </div>
+
+    <div class="filtre"></div>
+    <div id="contentModal" class="modalContainer effetModal">
+
+        <span id="btnClose" class="modalClose">
+            <i class="fas fa-times fa-2x"></i>
+        </span>
+
+        <div class="modalHeader">
+            <h2>Informations ajout projet</h2>
+        </div>
+        <div class="modalBody">
+
+        </div>
+        <div class="modalFooter">
+            <button id="btnOk">Ok</button>
+        </div>
 
     </div>
 

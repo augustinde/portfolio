@@ -1,9 +1,9 @@
 <?php
 
-require_once '../src/App/Manager/ProjetManager.php';
-require_once '../src/App/Entity/Projet.php';
-require_once '../src/App/Manager/ImageManager.php';
-require_once '../src/App/Entity/Image.php';
+require_once '../../src/App/Manager/ProjetManager.php';
+require_once '../../src/App/Entity/Projet.php';
+require_once '../../src/App/Manager/ImageManager.php';
+require_once '../../src/App/Entity/Image.php';
 
 use App\Entity\Projet;
 use App\Manager\ProjetManager;
@@ -41,24 +41,48 @@ $message_uploadImage = [];
 $message_projetExist = [];
 
 
+
+/*
+    * Code erreur
+    *
+    * IMG_S_VALID : Image valide
+    * IMG_S_NOT_EXIST : Image n'existe pas
+    * IMG_S_SIZE_VALID : Taille de l'image valide
+    * IMG_S_FORMAT_VALIDE : Format de l'image valide
+    * IMG_S_UPLOAD : Image upload
+    * IMG_S_SAVE_DB : Image sauvegarder en bdd
+
+    * IMG_E_INVALID : Image non valide
+    * IMG_E_EXIST : Image existe déjà
+    * IMG_E_SIZE_INVALID : Taille de l'image non valide
+    * IMG_E_FORMAT_INVALID : Format de l'image non valide
+    * IMG_E_UPLOAD : Image non upload
+    * IMG_E_NO_SAVE_DB : Image snon auvegarder en bdd
+    * IMG_E_COULD_NOT_UPLOAD : L'upload n'a pas pu être effectuer
+
+    * PRJ_S_NOT_EXIST : Aucun projet identique n'existe
+    * PRJ_S_SAVE_DB : Projet sauvegarder en bdd
+
+    * PRJ_E_EXIST : Le projet existe déjà
+    * PRJ_E_NO_SAVE_DB : Le projet n'a pas été sauvegarder en bdd
+*/
+
+
 if($ifProjetExist == null) {
 
-    $message_projetExist = "Le projet n'existe pas.";
+    $message_projetExist = "PRJ_S_NOT_EXIST";
 
     /*
      *  Upload file
      */
 
     for ($i = 0; $i < $nombreFichier; $i++) {
-        $message_sauvegardeImage[] = "La sauvegarde n'a pas pu s'effectué.";
-        $message_uploadImage[] = "L'upload n'a pas pu s'effectué.";
-        $message_insertionImage[] = "L'insertion n'a pas pu s'effectué.";
 
         /*
          * Initialisation variable
          */
 
-        $targetDir = "images/Projets/";
+        $targetDir = "../images/Projets/";
         $targetFile = $targetDir . basename($_FILES['imageUpload']['name'][$i]);
 
         /*
@@ -80,7 +104,7 @@ if($ifProjetExist == null) {
         if ($check) {
 
             $uploadIsReady = true;
-            $message_image[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " est valide.";
+            $message_image[] = "IMG_S_VALID : " . $_FILES["imageUpload"]["name"][$i];
 
             /*
              * Vérifie si l'image existe déjà
@@ -89,12 +113,12 @@ if($ifProjetExist == null) {
             if (file_exists($targetFile)) {
 
                 $uploadIsReady = false;
-                $message_image[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " existe déjà.";
+                $message_image[] = "IMG_E_EXIST : " . $_FILES["imageUpload"]["name"][$i];
 
             } else {
 
                 $uploadIsReady = true;
-                $message_image[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " n'existe pas.";
+                $message_image[] = "IMG_S_NOT_EXIST : " . $_FILES["imageUpload"]["name"][$i];
 
                 /*
                 * Vérification de la taille de l'image
@@ -103,12 +127,12 @@ if($ifProjetExist == null) {
                 if ($_FILES["imageUpload"]["size"][$i] > 5000000) {
 
                     $uploadIsReady = false;
-                    $message_image[] = "Taille de l'image " . $_FILES["imageUpload"]["name"][$i] . " non valide (" . $_FILES["imageUpload"]["size"][$i] . ")";
+                    $message_image[] = "IMG_E_SIZE_INVALID : " . $_FILES["imageUpload"]["name"][$i] . " " . $_FILES["imageUpload"]["size"][$i];
 
                 } else {
 
                     $uploadIsReady = true;
-                    $message_image[] = "Taille de l'image " . $_FILES["imageUpload"]["name"][$i] . " valide (" . $_FILES["imageUpload"]["size"][$i] . ")";
+                    $message_image[] = "IMG_S_SIZE_VALID : " . $_FILES["imageUpload"]["name"][$i] . " " . $_FILES["imageUpload"]["size"][$i];
 
                     /*
                      * Vérification du format d'image
@@ -117,12 +141,12 @@ if($ifProjetExist == null) {
                     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
 
                         $uploadIsReady = false;
-                        $message_image[] = "Format de l'image " . $_FILES["imageUpload"]["name"][$i] . " non valide (" . $imageFileType . ")";
+                        $message_image[] = "IMG_E_FORMAT_INVALID : " . $_FILES["imageUpload"]["name"][$i] . " non valide (" . $imageFileType;
 
                     } else {
 
                         $uploadIsReady = true;
-                        $message_image[] = "Format de l'image " . $_FILES["imageUpload"]["name"][$i] . " valide (" . $imageFileType . ")";
+                        $message_image[] = "IMG_S_FORMAT_VALID : " . $_FILES["imageUpload"]["name"][$i] . " " . $imageFileType;
 
 
                     }
@@ -132,7 +156,7 @@ if($ifProjetExist == null) {
         } else {
 
             $uploadIsReady = false;
-            $message_image[] = "Image " . $_FILES["imageUpload"]["name"][$i] . " n'est pas valide";
+            $message_image[] = "IMG_E_INVALID : " . $_FILES["imageUpload"]["name"][$i];
 
         }
 
@@ -146,7 +170,7 @@ if($ifProjetExist == null) {
 
             if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"][$i], $targetFile)) {
 
-                $message_uploadImage[] = "Image " . $_FILES["imageUpload"]["name"][$i] . " uploadé.";
+                $message_uploadImage[] = "IMG_S_UPLOAD : " . $_FILES["imageUpload"]["name"][$i];
 
                 //Insertion en BDD
 
@@ -160,7 +184,7 @@ if($ifProjetExist == null) {
 
                 if ($saveImgIsOk) {
 
-                    $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " a été insérée en base de donnée TABLE = images";
+                    $message_insertionImage[] = "IMG_S_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
                     $images[] = $imageManager->getLastId();
 
                     /*
@@ -189,22 +213,22 @@ if($ifProjetExist == null) {
                     $saveIsOk = $projetManager->save($projet);
 
                     if ($saveIsOk) {
-                        $message_ajoutProjet = "Le projet est sauvegardé en base de donnée.";
+                        $message_ajoutProjet = "PRJ_S_SAVE_DB";
                     } else {
-                        $message_ajoutProjet = "Le projet n\'est pas sauvegardé en base de donnée.";
+                        $message_ajoutProjet = "PRJ_E_NO_SAVE_DB";
                     }
 
                 } else {
 
                     $message_insertionImage = [];
-                    $message_insertionImage[] = "L'image " . $_FILES["imageUpload"]["name"][$i] . " n'a pas été insérée en base de donnée TABLE = images";
+                    $message_insertionImage[] = "IMG_E_NO_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
 
                 }
 
 
             } else {
 
-                $message_uploadImage[] = "Image " . $_FILES["imageUpload"]["name"][$i] . " non uploadé.";
+                $message_uploadImage[] = "IMG_E_UPLOAD : " . $_FILES["imageUpload"]["name"][$i];
                 $uploadIsOk = false;
 
             }
@@ -212,7 +236,7 @@ if($ifProjetExist == null) {
         } else {
 
             $message_uploadImage = [];
-            $message_uploadImage[] = "L'upload ne peut pas etre effectué sur " . $_FILES["imageUpload"]["name"][$i];
+            $message_uploadImage[] = "IMG_E_COULD_NOT_UPLOAD :" . $_FILES["imageUpload"]["name"][$i];
             $uploadIsOk = false;
 
         }
@@ -223,7 +247,7 @@ if($ifProjetExist == null) {
 
 }else{
 
-    $message_projetExist = "Le projet existe déjà";
+    $message_projetExist = "PRJ_E_EXIST";
 
 }
 

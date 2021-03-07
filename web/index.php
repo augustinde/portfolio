@@ -44,14 +44,6 @@
 				<a class="scrollTo" name="service" href="">Services</a>
 				<a class="scrollTo" name="techno" href="">Technologies</a>
 
-				<!-- <div class="dropdown">		
-					<span>Services <i class="fas fa-level-down-alt"></i></span>
-					<div class="dropdown-content">
-						<a href="">Professionnel</a>
-						<a href="">Association</a>
-					</div>
-				</div> -->
-
 				<a class="scrollTo" href="" name="projet">Projet</a>
 				<a class="scrollTo" href="" name="contact">Contact</a>
 				<a href="" >Portfolio</a>
@@ -69,7 +61,7 @@
             <div class="contentSidebar">
                 <h2>Veille technologique</h2>
                 <div class="textVeille">
-                    <p>Afin d'assurer une veille technologique, j'ai mis en place un agrégateur de flux RSS et mis en place un automatisme de web scraping pour la récupération d'articles lorsque qu'aucun flux RSS n'était disponible. Voici les mutliples articles qui on attiré mon attention :</p>
+                    <p>Afin d'assurer une veille technologique, j'ai mis en place un agrégateur de flux RSS et mis en place un automatisme de web scraping pour la récupération d'articles lorsque qu'aucun flux RSS n'était disponible. Voici les mutliples articles qui ont attiré mon attention :</p>
                 </div>
                 <div class="columnCardVeille">
 

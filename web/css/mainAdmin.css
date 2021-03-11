@@ -15,10 +15,9 @@ body{
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	background-color: #fff;
+	background:linear-gradient(60deg, #4CB1EF 0%, #424959 100%, #FF4B44 0%);
 
 }
-
 
 
 .divCheckbox input{
@@ -580,6 +579,59 @@ body{
 
  */
 
+
+/*
+
+	START LIST PROJECT
+
+ */
+
+
+#listProjet{
+	display: flex;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+}
+
+.sideFiltre{
+	padding:100px 30px;
+	height: 100%;
+	width:20%;
+	background-color: #fff;
+	color:#000000;
+}
+
+.contentList{
+
+	width:80%;
+	height: auto;
+	padding:40px;
+	border:1px solid blue;
+
+}
+
+.itemList{
+
+	border-radius:50px;
+	background-color: #fff;
+	width:100%;
+	padding:20px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	margin-bottom:20px;
+}
+
+.itemList:hover{
+	transform:translateY(-10px);
+}
+
+/*
+
+	END LIST PROJECT
+
+ */
 
 /*
 

@@ -43,7 +43,7 @@
 
     </div>
 
-    <section id="form">
+    <section id="formConnexion">
         
         <h1>Connexion</h1>
 

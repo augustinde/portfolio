@@ -60,7 +60,7 @@
                     echo '<div class="itemList">';
                         echo '<h4>'.$projet->getNom().'</h4>';
 
-                        echo '<span><i class="fas fa-times"></i></span>';
+                        echo '<a href="processing/deleteProjet.php?id='.$projet->getId().'"><i class="fas fa-times fa-lg"></i></a>';
 
                     echo '</div>';
 

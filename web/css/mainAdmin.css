@@ -601,14 +601,16 @@ body{
 	width:20%;
 	background-color: #fff;
 	color:#000000;
+	position: fixed;
 }
 
 .contentList{
 
-	width:80%;
+	width:100%;
 	height: auto;
 	padding:40px;
 	border:1px solid blue;
+	margin-left: 20%;
 
 }
 
@@ -618,13 +620,20 @@ body{
 	background-color: #fff;
 	width:100%;
 	padding:20px;
-	cursor: pointer;
 	transition: all 0.4s ease;
 	margin-bottom:20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .itemList:hover{
 	transform:translateY(-10px);
+}
+
+.itemList a{
+	text-decoration: none;
+	color:#E74C3C;
 }
 
 /*

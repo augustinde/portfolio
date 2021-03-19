@@ -3,6 +3,7 @@
 
 namespace App\Manager;
 
+use App\Entity\Projet;
 use PDO;
 use App\Entity\ProjetHasImage;
 
@@ -87,10 +88,10 @@ class ProjetHasImageManager
     }
 
 
-    public function delete(ProjetHasImage $projetHasImage)
+    public function delete(Projet $projet)
     {
-        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_image WHERE idProjetHasImage = :id LIMIT 1');
-        $this->pdostat->bindValue(':id', $projetHasImage->getIdProjetHasImage(), PDO::PARAM_INT);
+        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_image WHERE idProjet = :id');
+        $this->pdostat->bindValue(':id', $projet->getId(), PDO::PARAM_INT);
     
         return $this->pdostat->execute();
     

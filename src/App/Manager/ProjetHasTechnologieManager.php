@@ -3,6 +3,7 @@
 
 namespace App\Manager;
 
+use App\Entity\Projet;
 use PDO;
 use App\Entity\ProjetHasTechnologie;
 
@@ -67,10 +68,10 @@ class ProjetHasTechnologieManager
     
     }
     
-    public function delete(ProjetHasTechnologie $projetHasTechnologie)
+    public function delete(Projet $projet)
     {
-        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_technologie WHERE idProjetHasTechnologie = :id LIMIT 1');
-        $this->pdostat->bindValue(':id', $projetHasTechnologie->getId(), PDO::PARAM_INT);
+        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_technologie WHERE idProjet = :id');
+        $this->pdostat->bindValue(':id', $projet->getId(), PDO::PARAM_INT);
     
         return $this->pdostat->execute();
     

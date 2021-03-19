@@ -3,6 +3,7 @@
 
 namespace App\Manager;
 
+use App\Entity\Projet;
 use PDO;
 use App\Entity\ProjetHasCompetence;
 
@@ -67,10 +68,10 @@ class ProjetHasCompetenceManager
 
     }
 
-    public function delete(ProjetHasCompetence $projetHasCompetence)
+    public function delete(Projet $projet)
     {
-        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_competence WHERE idProjetHasCompetence = :id LIMIT 1');
-        $this->pdostat->bindValue(':id', $projetHasCompetence->getId(), PDO::PARAM_INT);
+        $this->pdostat = $this->pdo->prepare('DELETE FROM projet_has_competence WHERE idProjet = :id');
+        $this->pdostat->bindValue(':id', $projet->getId(), PDO::PARAM_INT);
 
         return $this->pdostat->execute();
 

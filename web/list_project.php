@@ -44,6 +44,8 @@
         </span>
     </div>
 
+    <div id="snackbar"></div>
+
     <section id="listProjet">
 
         <div class="sideFiltre">
@@ -57,10 +59,10 @@
             <?php
 
                 foreach ($projets as $projet){
-                    echo '<div class="itemList">';
+                    echo '<div class="itemList"  id="itemList-'.$projet->getId().'">';
                         echo '<h4>'.$projet->getNom().'</h4>';
 
-                        echo '<a href="processing/deleteProjet.php?id='.$projet->getId().'"><i class="fas fa-times fa-lg"></i></a>';
+                        echo '<a onclick="deleteProject('.$projet->getId().')" class="btnDeleteProject"><i class="fas fa-times fa-lg"></i></a>';
 
                     echo '</div>';
 
@@ -75,6 +77,11 @@
 
 
     </section>
+
+    <script>
+
+
+    </script>
 
     <script src="js/scriptAdmin.js"></script>
 

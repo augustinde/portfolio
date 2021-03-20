@@ -12,10 +12,10 @@ use App\Manager\ProjetHasImageManager;
 use App\Manager\ProjetHasTechnologieManager;
 use App\Manager\ProjetManager;
 
-if(isset($_GET["id"])) {
+if(isset($_POST["id"])) {
 
 
-    $id = htmlspecialchars($_GET["id"]);
+    $id = htmlspecialchars($_POST["id"]);
 
     $pm = new ProjetManager();
     $pcm = new ProjetHasCompetenceManager();
@@ -40,7 +40,6 @@ if(isset($_GET["id"])) {
     $message = "pasdeprojet";
 }
 
-header('Location: ../list_project.php?m='.$message);
-
+echo json_encode($message);
 
 

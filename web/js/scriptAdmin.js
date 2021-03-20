@@ -211,3 +211,40 @@ function closeModal(){
     document.querySelector(".filtre").classList.add("slide-out");
 
 }
+
+function deleteProject(id) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            let res = JSON.parse(xmlhttp.responseText);
+            console.info(res);
+
+            if(res === "ok"){
+                showSnackbar("Projet " + id + " supprimé.", "#43A047", id);
+            }else if(res === "pasdeprojet"){
+                showSnackbar("Erreur, réessayer.", "#F44336", id);
+            }else if(res === "erreur"){
+                showSnackbar("Erreur lors de la suppression.", "#F44336", id)
+            }
+
+        }
+
+    };
+
+    xmlhttp.open("POST", "processing/deleteProjet.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("id="+id);
+
+
+}
+
+function showSnackbar(text, couleur, id) {
+    var x = document.getElementById("snackbar");
+
+    x.innerHTML = text;
+    x.className = "show";
+    x.style.backgroundColor = couleur;
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ document.getElementById("itemList-"+id).classList.add("hideItemProjet"); }, 3000);
+}

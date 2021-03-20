@@ -106,17 +106,19 @@
                     if($competences === false){
                         echo "Erreur compétences";
                     }else{
-                        foreach($competences as $competence){
-                            echo "<div class=\"group-checkbox\">";
-                            echo "<input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"><label for=\"" . $competence->getLibelle() . "\">" . $competence->getLibelle() . "</label><br><br>";
-                            echo "</div>";
+
+                        echo '<ul>';
+                        foreach ($competences as $competence) {
+                            echo "<li><input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"> <label for=\"" . $competence->getLibelle() . "\"> " . $competence->getLibelle() . "</label></li>";
                         }
+                        echo '</ul>';
+
                     }
 
                     ?>
+                    <br>
 
                 </div>
-
                 <div class="group-input">
                     <button class="btnCollapseTechnologie">Ajouter des technologies</button>
                 </div>
@@ -128,12 +130,13 @@
                     if($technologies === false){
                         echo "Erreur technologies";
                     }else{
-                        foreach($technologies as $technologie){
-                            echo "<div class=\"group-checkbox\">";
-                            echo "<input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\">" . $technologie->getLibelle() . "</label><br><br>";
-                            echo "</div>";
 
+                        echo '<ul>';
+                        foreach($technologies as $technologie){
+                            echo "<li><input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\"> " . $technologie->getLibelle() . "</label></li>";
                         }
+                        echo '</ul>';
+
                     }
 
                     ?>

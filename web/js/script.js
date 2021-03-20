@@ -172,9 +172,7 @@ function requestViewProjet(id){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
 
-
             console.info(res);
-
 
             let idProjet = res[0].id;
             let nomProjet = res[1].nom;
@@ -411,25 +409,15 @@ function requestDisplayAllProjets(){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
 
-
+            console.log(res);
             res.forEach(element => {
                 //Récupération des données
-                let nomProjet, descProjet, urlDocFournit, urlProjet, idProjet, array_technologies = [], array_competences = [], array_images = [];
+                let nomProjet, idProjet, array_images = [];
 
                 idProjet = element[0].id;
                 nomProjet = element[1].nom;
-                descProjet = element[2].description;
-                urlDocFournit = element[3].urlDocFournit;
-                urlProjet = element[4].urlProjet;
-                element[5].technologies.forEach(techno => {
-                    array_technologies.push(techno);
-                });
 
-                element[6].competences.forEach(comp => {
-                    array_competences.push(comp);
-                });
-
-                element[7].images.forEach(img => {
+                element[2].images.forEach(img => {
                     array_images.push(img);
                 });
 

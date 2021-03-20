@@ -14,7 +14,7 @@ class Competence
     private $id;
     
     /**
-    * @var libelle $libelle  libelle de la compétence
+    * @var string $libelle  libelle de la compétence
     */
     private $libelle;
 
@@ -28,7 +28,7 @@ class Competence
 
 
     /**
-     * @return libelle
+     * @return string
      */
     public function getLibelle()
     {
@@ -36,7 +36,7 @@ class Competence
     }
 
     /**
-     * @param libelle $libelle
+     * @param string $libelle
      */
     public function setLibelle($libelle)
     {

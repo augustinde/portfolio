@@ -634,8 +634,8 @@ body{
 .itemList a{
 	text-decoration: none;
 	color:#E74C3C;
+	cursor:pointer;
 }
-
 
 #snackbar {
 	visibility: hidden;
@@ -676,12 +676,6 @@ body{
 @keyframes fadeout {
 	from {bottom: 30px; opacity: 1;}
 	to {bottom: 0; opacity: 0;}
-}
-
-.hideItemProjet{
-	visibility: visible;
-	-webkit-animation: fadeout 0.5s 2.5s;
-	animation: fadeout 0.5s 2.5s;
 }
 
 /*

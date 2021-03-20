@@ -246,5 +246,5 @@ function showSnackbar(text, couleur, id) {
     x.className = "show";
     x.style.backgroundColor = couleur;
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-    setTimeout(function(){ document.getElementById("itemList-"+id).classList.add("hideItemProjet"); }, 3000);
+    document.getElementById("itemList-"+id).remove();
 }

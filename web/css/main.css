@@ -251,23 +251,6 @@ header #headerBox{
 	top:40%;
 }
 
-header #langage{
-	position: absolute;
-	top:5px;
-	right:5px;
-	color:#fff;
-
-}
-
-header #langage a{
-	color:#fff;
-	font-family: "Montserrat", sans-serif;
-	letter-spacing: 2px;
-	text-decoration: none;
-
-}
-
-
 header img{
 	
 	opacity: 0.9;
@@ -729,6 +712,7 @@ img.primaryImageModal{
 
 .rowModal1 #technologiesModal, .rowModal1 #competencesModal, .rowModal1 #urlModal {
 	margin-top:10px;
+	height: max-content;
 }
 
 .columnModal{
@@ -1664,10 +1648,6 @@ footer .iconFooter a:hover{
 		left:9px;
 		width:9px;
 		height:9px;
-	}
-
-	#langage{
-		font-size:12px;
 	}
 
 	.containerProfil{

@@ -1,8 +1,5 @@
 # TO DO
 
-  * Project module
-    * In admin
-      * Correct edit projet
   * Contact module
     * Correct form
     * Add contact information
@@ -11,4 +8,3 @@
     * Add all project in database
     * Add .htaccess file
     * Add technologies management in dashboard
-    * Languages management

@@ -29,10 +29,6 @@
 					<div class="scroll scrollProfil"></div>
 				</div>
 			</div>
-			<div id="langage">
-				<a href="">FR</a> |
-				<a href="">EN</a>
-			</div>
 		</header>
 		<nav id="navbar">
 			<a href="" class="titleNav">Desaintfucien Augustin</a>
@@ -46,7 +42,6 @@
 
 				<a class="scrollTo" href="" name="projet">Projet</a>
 				<a class="scrollTo" href="" name="contact">Contact</a>
-				<a href="" >Portfolio</a>
 
 			</div>
 			<div class="networkNav">
@@ -66,25 +61,39 @@
                 <div class="columnCardVeille">
 
                     <div class="cardVeille">
-                        <img src='https://images.unsplash.com/photo-1612889047716-3128cdd3ce58?crop=entropy&cs=srgb&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85' alt=''>
-                        <a href="">Nouvelle carte graphique</a>
+                        <img src='images/php_veille.jpg' alt=''>
+                        <a href="https://www.arthurweill.fr/10-enseignements-et-bonnes-pratiques-php/">Bonne pratique PHP</a>
                     </div>
 
                     <div class="cardVeille">
-                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-                        <a href="">Nouvelle carte graphique</a>
+                        <img src='images/rtx3060.jpg' alt=''>
+                        <a href="https://www.youtube.com/watch?v=6pclmmpqjE8">RTX 3060 de NVIDIA</a>
                     </div>
 
                     <div class="cardVeille">
-                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-                        <a href="">Nouvelle carte Lorem ipsum dolor sit amet.</a>
+                        <img src='images/symfony_veille.png' alt=''>
+                        <a href="https://symfony.com/blog/moving-script-inside-head-and-the-defer-attribute">News Symfony  </a>
                     </div>
 
                     <div class="cardVeille">
-                        <img src='https://images.unsplash.com/photo-1613095247666-82a661314ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400' alt=''>
-                        <a href="">Nouvelle carte graphique</a>
+                        <img src='images/php_veille.jpg' alt=''>
+                        <a href="https://www.arthurweill.fr/10-facons-de-coder-la-meme-chose-en-php/">10 façons de coder la même chose en PHP</a>
                     </div>
 
+                    <div class="cardVeille">
+                        <img src='images/rtx3060ti.jpg' alt=''>
+                        <a href="https://www.youtube.com/watch?v=D4BotM49Eok">RTX 3060 TI de NVIDIA</a>
+                    </div>
+
+                    <div class="cardVeille">
+                        <img src='images/cpu.jpg' alt=''>
+                        <a href="https://www.youtube.com/watch?v=Lld0eTZ2Vsk&t=24s">Quels processeur choisir ?</a>
+                    </div>
+
+                    <div class="cardVeille">
+                        <img src='images/rx6900xt.webp' alt=''>
+                        <a href="https://www.youtube.com/watch?v=UKW24KFQrPo">RX 6800XT, 6800 et 6900XT d'AMD</a>
+                    </div>
                 </div>
             </div>
 

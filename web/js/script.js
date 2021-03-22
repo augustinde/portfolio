@@ -528,7 +528,7 @@ function sendMail(e) {
     nomPrenom = document.getElementById("inputNom").value;
     email = document.getElementById("inputEmail").value;
     message = document.getElementById("inputMessage").value;
-
+    console.log(nomPrenom , email, message)
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){

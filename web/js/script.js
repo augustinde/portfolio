@@ -528,13 +528,13 @@ function sendMail(e) {
     nomPrenom = document.getElementById("inputNom").value;
     email = document.getElementById("inputEmail").value;
     message = document.getElementById("inputMessage").value;
-    console.log(nomPrenom , email, message)
+
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
-
-            //A faire sur serveur
+            console.log(res);
+            console.log(res['error']);
 
         }
     };
@@ -544,10 +544,21 @@ function sendMail(e) {
     fd.append("email", email);
     fd.append("message", message);
 
-    xmlhttp.open("POST", "ignore.php");
+    xmlhttp.open("POST", "send_email.php");
     xmlhttp.send(fd);
 
 }
+
+
+function showSnackbar(text, couleur) {
+    var x = document.getElementById("snackbar");
+
+    x.innerHTML = text;
+    x.className = "show";
+    x.style.backgroundColor = couleur;
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
 
 //Gestion du module veille technologique
 document.getElementById("btnVeilleTechno").addEventListener("click", () => {
@@ -574,3 +585,4 @@ document.getElementById("btnVeilleTechno").addEventListener("click", () => {
 
 
 });
+

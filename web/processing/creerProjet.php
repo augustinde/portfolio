@@ -20,6 +20,8 @@ $nombreFichier = count($_FILES["imageUpload"]["name"]);
 
 $images = [];
 
+$saveImgIsOk = false;
+
 $technologies = $_POST["technologies"];
 $competences = $_POST["competences"];
 
@@ -168,6 +170,8 @@ if($ifProjetExist == null) {
 
             $message_uploadImage = [];
 
+
+            //Upload de l'image courante
             if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"][$i], "../".$targetFile)) {
 
                 $message_uploadImage[] = "IMG_S_UPLOAD : " . $_FILES["imageUpload"]["name"][$i];
@@ -180,56 +184,13 @@ if($ifProjetExist == null) {
                 $imageManager = new ImageManager();
                 $saveImgIsOk = $imageManager->save($image);
 
-                $message_insertionImage = [];
-
-                if ($saveImgIsOk) {
-
-                    $message_insertionImage[] = "IMG_S_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
-                    $images[] = $imageManager->getLastId();
-
-                    /*
-                    * Ajout du projet en base de donnée
-                    */
-
-                    $projet = new Projet();
-
-
-                    if ($urlProjet == "") {
-                        $urlProjet = null;
-                    }
-
-                    if ($urlDocFournit == "") {
-                        $urlDocFournit = null;
-                    }
-                    $projet->setNom($nomProjet);
-                    $projet->setDescription($descriptionProjet);
-                    $projet->setUrlDocFournit($urlDocFournit);
-                    $projet->setUrlProjet($urlProjet);
-                    $projet->setArrayTechno($technologies);
-                    $projet->setArrayCompetence($competences);
-                    $projet->setArrayImage($images);
-
-                    $projetManager = new ProjetManager();
-                    $saveIsOk = $projetManager->save($projet);
-
-                    if ($saveIsOk) {
-                        $message_ajoutProjet = "PRJ_S_SAVE_DB";
-                    } else {
-                        $message_ajoutProjet = "PRJ_E_NO_SAVE_DB";
-                    }
-
-                } else {
-
-                    $message_insertionImage = [];
-                    $message_insertionImage[] = "IMG_E_NO_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
-
-                }
-
+                $message_insertionImage[] = "IMG_S_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
+                $images[] = $imageManager->getLastId();
 
             } else {
 
                 $message_uploadImage[] = "IMG_E_UPLOAD : " . $_FILES["imageUpload"]["name"][$i];
-                $uploadIsOk = false;
+                $saveImgIsOk = false;
 
             }
 
@@ -237,13 +198,56 @@ if($ifProjetExist == null) {
 
             $message_uploadImage = [];
             $message_uploadImage[] = "IMG_E_COULD_NOT_UPLOAD :" . $_FILES["imageUpload"]["name"][$i];
-            $uploadIsOk = false;
+            $saveImgIsOk = false;
 
         }
 
 
 
     }
+
+    //Mise en bdd du projet
+    if ($saveImgIsOk) {
+
+        /*
+        * Ajout du projet en base de donnée
+        */
+
+        $projet = new Projet();
+
+
+        if ($urlProjet == "") {
+            $urlProjet = null;
+        }
+
+        if ($urlDocFournit == "") {
+            $urlDocFournit = null;
+        }
+
+        $projet->setNom($nomProjet);
+        $projet->setDescription($descriptionProjet);
+        $projet->setUrlDocFournit($urlDocFournit);
+        $projet->setUrlProjet($urlProjet);
+        $projet->setArrayTechno($technologies);
+        $projet->setArrayCompetence($competences);
+        $projet->setArrayImage($images);
+
+        $projetManager = new ProjetManager();
+        $saveIsOk = $projetManager->save($projet);
+
+        if ($saveIsOk) {
+            $message_ajoutProjet = "PRJ_S_SAVE_DB";
+        } else {
+            $message_ajoutProjet = "PRJ_E_NO_SAVE_DB";
+        }
+
+    } else {
+
+        $message_insertionImage = [];
+        $message_insertionImage[] = "IMG_E_NO_SAVE_DB : " . $_FILES["imageUpload"]["name"][$i];
+
+    }
+
 
 }else{
 

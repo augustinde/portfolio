@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 $nom = htmlspecialchars($_POST['nomPrenom']);
 $email = htmlspecialchars($_POST['email']);

@@ -191,7 +191,7 @@ function createProject() {
 
     };
 
-    xmlhttp.open("POST", "processing/creerProjet.php");
+    xmlhttp.open("POST", "process/creerProjet.php");
     xmlhttp.send(formData);
 
 
@@ -232,7 +232,7 @@ function deleteProject(id) {
 
     };
 
-    xmlhttp.open("POST", "processing/deleteProjet.php", true);
+    xmlhttp.open("POST", "process/deleteProjet.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("id="+id);
 

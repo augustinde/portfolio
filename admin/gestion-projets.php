@@ -50,7 +50,7 @@
 
         </div>
 
-        <a href="../web/deconnexion.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+        <a href="../web/process/deconnexion.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
     
 
     </div>

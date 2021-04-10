@@ -1,6 +1,6 @@
 <?php 
 
-	include "../src/App/include/db.php";
+	include "../../src/App/include/db.php";
 	session_start();
 
 	$user = $_SESSION["user"];

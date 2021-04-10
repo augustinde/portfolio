@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "../src/App/include/db.php";
+    require "../../src/App/include/db.php";
 
     if(!empty($_POST["inputPassword"])){
 
@@ -38,16 +38,16 @@
                 header('Location: dashboard.php');
 
             }else{
-                header('Location: connexion.php?error=wrongPassword');
+                header('Location: ../connexion.php?error=wrongPassword');
             }
 
         }else{
-            header('Location: connexion.php?error=emptyPassword');
+            header('Location: ../connexion.php?error=emptyPassword');
 
         }
 
     }else{
-        header('Location: connexion.php?error=emptyUser');
+        header('Location: ../connexion.php?error=emptyUser');
 
     }
 

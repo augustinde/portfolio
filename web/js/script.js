@@ -242,8 +242,9 @@ function requestViewProjet(id){
             let titreUrlDocFournit = document.createElement("h3");
             titreUrlDocFournit.setAttribute("id", "titreUrlDocFournit");
 
-            let textTitreUrlDocFournit = document.createTextNode("Document fournit");
+            let textTitreUrlDocFournit = document.createTextNode("Liens du projet");
             titreUrlDocFournit.appendChild(textTitreUrlDocFournit);
+
 
             let contenuUrlDocFournit = document.createElement("a");
             contenuUrlDocFournit.href = urlDocFournit;
@@ -251,21 +252,6 @@ function requestViewProjet(id){
             contenuUrlDocFournit.target = "_blank";
             contenuUrlDocFournit.setAttribute("class", "lienModal");
 
-            urlModalDocFournit.appendChild(titreUrlDocFournit);
-            urlModalDocFournit.appendChild(contenuUrlDocFournit);
-
-            urlModal.appendChild(urlModalDocFournit);
-
-
-            let urlModalDocProjet = document.createElement("div");
-            urlModalDocProjet.setAttribute("class", "urlModalChild");
-
-
-            let titreUrlProjet = document.createElement("h3");
-            titreUrlProjet.setAttribute("id", "titreUrlProjet");
-
-            let textTitreUrlProjet = document.createTextNode("Voir ce projet");
-            titreUrlProjet.appendChild(textTitreUrlProjet);
 
             let contenuUrlProjet = document.createElement("a");
             contenuUrlProjet.href = urlProjet;
@@ -273,10 +259,32 @@ function requestViewProjet(id){
             contenuUrlProjet.target = "_blank";
             contenuUrlProjet.setAttribute("class", "lienModal");
 
-            urlModalDocProjet.appendChild(titreUrlProjet);
-            urlModalDocProjet.appendChild(contenuUrlProjet);
+            urlModalDocFournit.appendChild(titreUrlDocFournit);
+            urlModalDocFournit.appendChild(contenuUrlDocFournit);
+            urlModalDocFournit.appendChild(contenuUrlProjet);
 
-            urlModal.appendChild(urlModalDocProjet);
+            urlModal.appendChild(urlModalDocFournit);
+
+            //
+            // let urlModalDocProjet = document.createElement("div");
+            // urlModalDocProjet.setAttribute("class", "urlModalChild");
+            //
+            //
+            // let titreUrlProjet = document.createElement("h3");
+            // titreUrlProjet.setAttribute("id", "titreUrlProjet");
+            //
+            // let textTitreUrlProjet = document.createTextNode("Voir ce projet");
+            // titreUrlProjet.appendChild(textTitreUrlProjet);
+            //
+            // contenuUrlProjet.href = urlProjet;
+            // contenuUrlProjet.innerHTML = "<i class='fas fa-project-diagram'></i> Document(s) fournis";
+            // contenuUrlProjet.target = "_blank";
+            // contenuUrlProjet.setAttribute("class", "lienModal");
+            //
+            // urlModalDocProjet.appendChild(titreUrlProjet);
+            // urlModalDocProjet.appendChild(contenuUrlProjet);
+            //
+            // urlModal.appendChild(urlModalDocProjet);
 
             //Partie technologies
             let technologiesModal = document.createElement("div");

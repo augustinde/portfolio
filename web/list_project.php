@@ -30,12 +30,12 @@
     <div class="screenSidebar"></div>
     <div id="containerSidebar">
         <div class="contentSidebar">
-            <a class="itemSidebar" href="dashboard.php">Tableau de bord</a>
-            <a class="itemSidebar" href="add_project.php">Ajouter un projet</a>
+            <a class="itemSidebar" href="process/dashboard.php">Tableau de bord</a>
+            <a class="itemSidebar" href="process/add_project.php">Ajouter un projet</a>
             <a class="itemSidebar" href="list_project.php">Liste des projets</a>
             <a class="itemSidebar" href="">LOREM</a>
             <a class="itemSidebar" href="">LOREM</a>
-            <a class="itemSidebar itemDecoSidebar" href="deconnexion.php">Déconnexion</a>
+            <a class="itemSidebar itemDecoSidebar" href="process/deconnexion.php">Déconnexion</a>
 
         </div>
 

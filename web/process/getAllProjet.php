@@ -1,8 +1,8 @@
 <?php
 
-require_once "../src/App/Entity/Projet.php";
-require_once "../src/App/Manager/ProjetManager.php";
-require_once "../src/App/include/db.php";
+require_once "../../src/App/Entity/Projet.php";
+require_once "../../src/App/Manager/ProjetManager.php";
+require_once "../../src/App/include/db.php";
 
 use App\Manager\ProjetManager;
 use App\Entity\Projet;

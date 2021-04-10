@@ -610,6 +610,8 @@ img.primaryImageModal{
 
 #urlModal .urlModalChild{
 	margin-bottom:10px;
+	display: flex;
+	flex-direction: column;
 }
 
 #urlModal h3{
@@ -937,6 +939,7 @@ footer hr{
 
 a.lienModal{
 	transition:all 0.2s ease-in-out;
+	width:max-content;
 }
 
 a.lienModal:hover{
@@ -1223,6 +1226,7 @@ footer .iconFooter a:hover{
 }
 
 
+
 .screenSidebar{
 	height:100%;
 	width:100%;
@@ -1237,6 +1241,7 @@ footer .iconFooter a:hover{
 /*
 	END MODULE VEILLE TECHNOLOGIQUE
  */
+
 
 
 #snackbar.show {
@@ -1781,3 +1786,4 @@ footer .iconFooter a:hover{
 	}
 
 }
+

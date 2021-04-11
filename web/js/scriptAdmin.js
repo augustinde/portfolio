@@ -67,7 +67,7 @@ document.querySelector(".btnCollapseTechnologie").addEventListener("click", (e) 
 
 document.querySelector("#imageUpload").addEventListener("change", (e) => {
     document.querySelector("#previewFileDiv").innerHTML = "";
-    console.log("Nombre de fichier : "+ e.target.files.length);
+    // console.log("Nombre de fichier : "+ e.target.files.length);
 
     if(e.target.files.length <= 3) {
 
@@ -79,7 +79,7 @@ document.querySelector("#imageUpload").addEventListener("change", (e) => {
 
         }
     }else{
-        console.log("Nombre de fichier maximum limité à 3 !");
+        // console.log("Nombre de fichier maximum limité à 3 !");
         e.preventDefault();
     }
 });
@@ -135,7 +135,7 @@ function createProject() {
 
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(xmlhttp.responseText);
-            console.info(res);
+            // console.info(res);
 
 
             document.querySelector(".filtre").classList.add("slide-in");
@@ -191,7 +191,7 @@ function createProject() {
 
     };
 
-    xmlhttp.open("POST", "processing/creerProjet.php");
+    xmlhttp.open("POST", "creerProjet.php");
     xmlhttp.send(formData);
 
 
@@ -210,4 +210,41 @@ function closeModal(){
 
     document.querySelector(".filtre").classList.add("slide-out");
 
+}
+
+function deleteProject(id) {
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+            let res = JSON.parse(xmlhttp.responseText);
+            // console.info(res);
+
+            if(res === "ok"){
+                showSnackbar("Projet " + id + " supprimé.", "#43A047", id);
+            }else if(res === "pasdeprojet"){
+                showSnackbar("Erreur, réessayer.", "#F44336", id);
+            }else if(res === "erreur"){
+                showSnackbar("Erreur lors de la suppression.", "#F44336", id)
+            }
+
+        }
+
+    };
+
+    xmlhttp.open("POST", "deleteProjet.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("id="+id);
+
+
+}
+
+function showSnackbar(text, couleur, id) {
+    var x = document.getElementById("snackbar");
+
+    x.innerHTML = text;
+    x.className = "show";
+    x.style.backgroundColor = couleur;
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    document.getElementById("itemList-"+id).remove();
 }

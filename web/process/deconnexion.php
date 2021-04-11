@@ -1,6 +1,6 @@
 <?php 
 
-	include "../src/App/include/db.php";
+	include "../../src/App/include/db.php";
 	session_start();
 
 	$user = $_SESSION["user"];
@@ -20,6 +20,6 @@
 		setcookie("tokenAuth", NULL, -1);
 		unset($_COOKIE["tokenAuth"]);
 	}
-	header("Location: connexion.php");
+	header("Location: ../connexion.php");
 
 ?>

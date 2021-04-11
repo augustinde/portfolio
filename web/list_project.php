@@ -30,12 +30,12 @@
     <div class="screenSidebar"></div>
     <div id="containerSidebar">
         <div class="contentSidebar">
-            <a class="itemSidebar" href="dashboard.php">Tableau de bord</a>
-            <a class="itemSidebar" href="add_project.php">Ajouter un projet</a>
+            <a class="itemSidebar" href="process/dashboard.php">Tableau de bord</a>
+            <a class="itemSidebar" href="process/add_project.php">Ajouter un projet</a>
             <a class="itemSidebar" href="list_project.php">Liste des projets</a>
             <a class="itemSidebar" href="">LOREM</a>
             <a class="itemSidebar" href="">LOREM</a>
-            <a class="itemSidebar itemDecoSidebar" href="deconnexion.php">Déconnexion</a>
+            <a class="itemSidebar itemDecoSidebar" href="process/deconnexion.php">Déconnexion</a>
 
         </div>
 
@@ -43,6 +43,8 @@
             <i class="fas fa-space-shuttle fa-2x"></i>
         </span>
     </div>
+
+    <div id="snackbar"></div>
 
     <section id="listProjet">
 
@@ -57,10 +59,10 @@
             <?php
 
                 foreach ($projets as $projet){
-                    echo '<div class="itemList">';
+                    echo '<div class="itemList"  id="itemList-'.$projet->getId().'">';
                         echo '<h4>'.$projet->getNom().'</h4>';
 
-                        echo '<span><i class="fas fa-times"></i></span>';
+                        echo '<a onclick="deleteProject('.$projet->getId().')" class="btnDeleteProject"><i class="fas fa-times fa-lg"></i></a>';
 
                     echo '</div>';
 
@@ -75,6 +77,11 @@
 
 
     </section>
+
+    <script>
+
+
+    </script>
 
     <script src="js/scriptAdmin.js"></script>
 

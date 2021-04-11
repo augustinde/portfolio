@@ -1,11 +1,11 @@
 <?php
 
-    require_once "../src/App/include/authentification.php";
+    require_once "../../src/App/include/authentification.php";
 
-    require_once "../src/App/Entity/Competence.php";
-    require_once "../src/App/Manager/CompetenceManager.php";
-    require_once "../src/App/Entity/Technologie.php";
-    require_once "../src/App/Manager/TechnologieManager.php";
+    require_once "../../src/App/Entity/Competence.php";
+    require_once "../../src/App/Manager/CompetenceManager.php";
+    require_once "../../src/App/Entity/Technologie.php";
+    require_once "../../src/App/Manager/TechnologieManager.php";
 
     use App\Manager\CompetenceManager;
     use App\Manager\TechnologieManager;
@@ -22,7 +22,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/mainAdmin.css">
+    <link rel="stylesheet" href="../css/mainAdmin.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0a22fe5e55.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -35,7 +35,7 @@
         <div class="contentSidebar">
             <a class="itemSidebar" href="dashboard.php">Tableau de bord</a>
             <a class="itemSidebar" href="add_project.php">Ajouter un projet</a>
-            <a class="itemSidebar" href="list_project.php">Liste des projets</a>
+            <a class="itemSidebar" href="../list_project.php">Liste des projets</a>
             <a class="itemSidebar" href="">LOREM</a>
             <a class="itemSidebar" href="">LOREM</a>
             <a class="itemSidebar itemDecoSidebar" href="deconnexion.php">Déconnexion</a>
@@ -106,17 +106,19 @@
                     if($competences === false){
                         echo "Erreur compétences";
                     }else{
-                        foreach($competences as $competence){
-                            echo "<div class=\"group-checkbox\">";
-                            echo "<input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"><label for=\"" . $competence->getLibelle() . "\">" . $competence->getLibelle() . "</label><br><br>";
-                            echo "</div>";
+
+                        echo '<ul>';
+                        foreach ($competences as $competence) {
+                            echo "<li><input class=\"inputCompetence\" type=\"checkbox\" value=\"" . $competence->getIdCompetence() . "\" name=\"competences[]\" id=\"" . $competence->getLibelle() . "\"> <label for=\"" . $competence->getLibelle() . "\"> " . $competence->getLibelle() . "</label></li>";
                         }
+                        echo '</ul>';
+
                     }
 
                     ?>
+                    <br>
 
                 </div>
-
                 <div class="group-input">
                     <button class="btnCollapseTechnologie">Ajouter des technologies</button>
                 </div>
@@ -128,12 +130,13 @@
                     if($technologies === false){
                         echo "Erreur technologies";
                     }else{
-                        foreach($technologies as $technologie){
-                            echo "<div class=\"group-checkbox\">";
-                            echo "<input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\">" . $technologie->getLibelle() . "</label><br><br>";
-                            echo "</div>";
 
+                        echo '<ul>';
+                        foreach($technologies as $technologie){
+                            echo "<li><input class=\"inputTechnologie\" type=\"checkbox\" value=\"" . $technologie->getId() . "\" name=\"technologies[]\" id=\"" . $technologie->getLibelle() . "\"><label for=\"" . $technologie->getLibelle() . "\"> " . $technologie->getLibelle() . "</label></li>";
                         }
+                        echo '</ul>';
+
                     }
 
                     ?>
@@ -174,6 +177,6 @@
     </div>
 
 
-    <script src="js/scriptAdmin.js"></script>
+    <script src="../js/scriptAdmin.js"></script>
 </body>
 </html>

@@ -1,23 +1,23 @@
 <?php
 
-require_once "../src/App/Entity/Projet.php";
-require_once "../src/App/Manager/ProjetManager.php";
+require_once "../../src/App/Entity/Projet.php";
+require_once "../../src/App/Manager/ProjetManager.php";
 
-require_once "../src/App/Entity/Technologie.php";
-require_once "../src/App/Manager/TechnologieManager.php";
-require_once "../src/App/Entity/ProjetHasTechnologie.php";
-require_once "../src/App/Manager/ProjetHasTechnologieManager.php";
+require_once "../../src/App/Entity/Technologie.php";
+require_once "../../src/App/Manager/TechnologieManager.php";
+require_once "../../src/App/Entity/ProjetHasTechnologie.php";
+require_once "../../src/App/Manager/ProjetHasTechnologieManager.php";
 
-require_once "../src/App/Entity/Competence.php";
-require_once "../src/App/Manager/CompetenceManager.php";
-require_once "../src/App/Entity/ProjetHasCompetence.php";
-require_once "../src/App/Manager/ProjetHasCompetenceManager.php";
+require_once "../../src/App/Entity/Competence.php";
+require_once "../../src/App/Manager/CompetenceManager.php";
+require_once "../../src/App/Entity/ProjetHasCompetence.php";
+require_once "../../src/App/Manager/ProjetHasCompetenceManager.php";
 
-require_once "../src/App/Entity/Image.php";
-require_once "../src/App/Manager/ImageManager.php";
-require_once "../src/App/Entity/ProjetHasImage.php";
+require_once "../../src/App/Entity/Image.php";
+require_once "../../src/App/Manager/ImageManager.php";
+require_once "../../src/App/Entity/ProjetHasImage.php";
 
-require_once "../src/App/include/db.php";
+require_once "../../src/App/include/db.php";
 
 use App\Manager\ProjetManager;
 use App\Entity\Projet;

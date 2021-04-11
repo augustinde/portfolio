@@ -121,11 +121,27 @@ modalElt.addEventListener("click", function(e){
     }
 });
 
+let modalEltMentions = document.getElementById("modalMentionsId");
+
+modalEltMentions.addEventListener("click", function(e){
+    if(e.target === modalElt){
+        closeModalMentionsFunction();
+    }
+});
+
+let modalEltCGV = document.getElementById("modalCGVId");
+
+modalEltCGV.addEventListener("click", function(e){
+    if(e.target === modalElt){
+        closeModalCGVFunction();
+    }
+});
+
+
 //Fonction fermeture du modal
 function closeModalFunction(){
 
     let modalProjet = document.getElementById("modalProjetId");
-    let contentModal = document.getElementById("ctModal");
 
     modalProjet.classList.add('hideModalProjet');
 
@@ -138,6 +154,37 @@ function closeModalFunction(){
     },400);
 
 }
+
+//Fonction fermeture du modal
+function closeModalMentionsFunction(){
+
+    let modalMentions = document.getElementById("modalMentionsId");
+
+    modalMentions.classList.add('hideModalMentions');
+
+    setTimeout(() => {
+        modalMentions.classList.remove('visibleModalMentions');
+        modalMentions.classList.remove('hideModalMentions');
+
+    },400);
+
+}
+
+//Fonction fermeture du modal
+function closeModalCGVFunction(){
+
+    let modalMentions = document.getElementById("modalCGVId");
+
+    modalMentions.classList.add('hideModalCGV');
+
+    setTimeout(() => {
+        modalMentions.classList.remove('visibleModalCGV');
+        modalMentions.classList.remove('hideModalCGV');
+
+    },400);
+
+}
+
 
 
 function affichageImageModal() {
@@ -172,9 +219,7 @@ function requestViewProjet(id){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
 
-
-            console.info(res);
-
+            // console.info(res);
 
             let idProjet = res[0].id;
             let nomProjet = res[1].nom;
@@ -185,14 +230,14 @@ function requestViewProjet(id){
             let competences = res[6].competences;
             let images = res[7].images;
 
-            console.info(idProjet);
-            console.info(nomProjet);
-            console.info(description);
-            console.info(urlProjet);
-            console.info(urlDocFournit);
-            console.info(technologies);
-            console.info(competences);
-            console.info(images);
+            // console.info(idProjet);
+            // console.info(nomProjet);
+            // console.info(description);
+            // console.info(urlProjet);
+            // console.info(urlDocFournit);
+            // console.info(technologies);
+            // console.info(competences);
+            // console.info(images);
 
             //gestion modal projet
 
@@ -244,41 +289,63 @@ function requestViewProjet(id){
             let titreUrlDocFournit = document.createElement("h3");
             titreUrlDocFournit.setAttribute("id", "titreUrlDocFournit");
 
-            let textTitreUrlDocFournit = document.createTextNode("Document fournit");
+            let textTitreUrlDocFournit = document.createTextNode("Liens du projet");
             titreUrlDocFournit.appendChild(textTitreUrlDocFournit);
-
-            let contenuUrlDocFournit = document.createElement("a");
-            contenuUrlDocFournit.href = urlDocFournit;
-            contenuUrlDocFournit.innerHTML = "<i class='fas fa-project-diagram'></i> Lien du projet";
-            contenuUrlDocFournit.target = "_blank";
-            contenuUrlDocFournit.setAttribute("class", "lienModal");
-
             urlModalDocFournit.appendChild(titreUrlDocFournit);
-            urlModalDocFournit.appendChild(contenuUrlDocFournit);
+
+            if(urlDocFournit != null){
+                let contenuUrlDocFournit = document.createElement("a");
+                contenuUrlDocFournit.href = urlDocFournit;
+                contenuUrlDocFournit.innerHTML = "<i class='fas fa-project-diagram'></i> Lien du projet";
+                contenuUrlDocFournit.target = "_blank";
+                contenuUrlDocFournit.setAttribute("class", "lienModal");
+                urlModalDocFournit.appendChild(contenuUrlDocFournit);
+
+            }
+
+            if(urlProjet != null){
+                let contenuUrlProjet = document.createElement("a");
+                contenuUrlProjet.href = urlProjet;
+                contenuUrlProjet.innerHTML = "<i class='fas fa-project-diagram'></i> Document(s) fournis";
+                contenuUrlProjet.target = "_blank";
+                contenuUrlProjet.setAttribute("class", "lienModal");
+                urlModalDocFournit.appendChild(contenuUrlProjet);
+
+            }
+
+            if(urlProjet == null && urlDocFournit == null){
+
+                let paragrapheAucunUrl = document.createElement("p");
+                paragrapheAucunUrl.setAttribute("id", "aucunLien");
+
+                let textParagrapheAucunUrl = document.createTextNode("Aucun lien");
+                paragrapheAucunUrl.appendChild(textParagrapheAucunUrl);
+                urlModalDocFournit.appendChild(paragrapheAucunUrl);
+            }
+
 
             urlModal.appendChild(urlModalDocFournit);
 
-
-            let urlModalDocProjet = document.createElement("div");
-            urlModalDocProjet.setAttribute("class", "urlModalChild");
-
-
-            let titreUrlProjet = document.createElement("h3");
-            titreUrlProjet.setAttribute("id", "titreUrlProjet");
-
-            let textTitreUrlProjet = document.createTextNode("Voir ce projet");
-            titreUrlProjet.appendChild(textTitreUrlProjet);
-
-            let contenuUrlProjet = document.createElement("a");
-            contenuUrlProjet.href = urlProjet;
-            contenuUrlProjet.innerHTML = "<i class='fas fa-project-diagram'></i> Document(s) fournis";
-            contenuUrlProjet.target = "_blank";
-            contenuUrlProjet.setAttribute("class", "lienModal");
-
-            urlModalDocProjet.appendChild(titreUrlProjet);
-            urlModalDocProjet.appendChild(contenuUrlProjet);
-
-            urlModal.appendChild(urlModalDocProjet);
+            //
+            // let urlModalDocProjet = document.createElement("div");
+            // urlModalDocProjet.setAttribute("class", "urlModalChild");
+            //
+            //
+            // let titreUrlProjet = document.createElement("h3");
+            // titreUrlProjet.setAttribute("id", "titreUrlProjet");
+            //
+            // let textTitreUrlProjet = document.createTextNode("Voir ce projet");
+            // titreUrlProjet.appendChild(textTitreUrlProjet);
+            //
+            // contenuUrlProjet.href = urlProjet;
+            // contenuUrlProjet.innerHTML = "<i class='fas fa-project-diagram'></i> Document(s) fournis";
+            // contenuUrlProjet.target = "_blank";
+            // contenuUrlProjet.setAttribute("class", "lienModal");
+            //
+            // urlModalDocProjet.appendChild(titreUrlProjet);
+            // urlModalDocProjet.appendChild(contenuUrlProjet);
+            //
+            // urlModal.appendChild(urlModalDocProjet);
 
             //Partie technologies
             let technologiesModal = document.createElement("div");
@@ -392,7 +459,7 @@ function requestViewProjet(id){
         }
     };
 
-    xmlhttp.open("POST", "getProjet.php");
+    xmlhttp.open("POST", "process/getProjet.php");
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 
@@ -411,25 +478,15 @@ function requestDisplayAllProjets(){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
 
-
+            // console.log(res);
             res.forEach(element => {
                 //Récupération des données
-                let nomProjet, descProjet, urlDocFournit, urlProjet, idProjet, array_technologies = [], array_competences = [], array_images = [];
+                let nomProjet, idProjet, array_images = [];
 
                 idProjet = element[0].id;
                 nomProjet = element[1].nom;
-                descProjet = element[2].description;
-                urlDocFournit = element[3].urlDocFournit;
-                urlProjet = element[4].urlProjet;
-                element[5].technologies.forEach(techno => {
-                    array_technologies.push(techno);
-                });
 
-                element[6].competences.forEach(comp => {
-                    array_competences.push(comp);
-                });
-
-                element[7].images.forEach(img => {
+                element[2].images.forEach(img => {
                     array_images.push(img);
                 });
 
@@ -475,7 +532,7 @@ function requestDisplayAllProjets(){
         }
     };
 
-    xmlhttp.open("POST", "getAllProjet.php",true);
+    xmlhttp.open("POST", "process/getAllProjet.php",true);
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xmlhttp.send();
 
@@ -545,8 +602,8 @@ function sendMail(e) {
     xmlhttp.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){
             let res = JSON.parse(xmlhttp.responseText);
-
-            //A faire sur serveur
+            // console.log(res);
+            // console.log(res['error']);
 
         }
     };
@@ -556,10 +613,21 @@ function sendMail(e) {
     fd.append("email", email);
     fd.append("message", message);
 
-    xmlhttp.open("POST", "ignore.php");
+    xmlhttp.open("POST", "send_email.php");
     xmlhttp.send(fd);
 
 }
+
+
+function showSnackbar(text, couleur) {
+    var x = document.getElementById("snackbar");
+
+    x.innerHTML = text;
+    x.className = "show";
+    x.style.backgroundColor = couleur;
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
 
 //Gestion du module veille technologique
 document.getElementById("btnVeilleTechno").addEventListener("click", () => {
@@ -586,3 +654,30 @@ document.getElementById("btnVeilleTechno").addEventListener("click", () => {
 
 
 });
+
+let openMentions = document.getElementById("btnOpenMentions");
+let modalContentMentions = document.getElementById("modalMentionsId");
+
+// document.getElementById("btnCloseMentions").addEventListener("click", closeModal);
+
+openMentions.addEventListener("click", function(e){
+    e.preventDefault();
+    modalContentMentions.classList.add('visibleModalMentions');
+
+
+
+});
+
+let openCGV = document.getElementById("btnOpenCGV");
+let modalContentCGV= document.getElementById("modalCGVId");
+
+// document.getElementById("btnCloseMentions").addEventListener("click", closeModal);
+
+openCGV.addEventListener("click", function(e){
+    e.preventDefault();
+    modalContentCGV.classList.add('visibleModalCGV');
+
+
+
+});
+

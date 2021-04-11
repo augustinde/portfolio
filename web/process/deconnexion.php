@@ -20,6 +20,6 @@
 		setcookie("tokenAuth", NULL, -1);
 		unset($_COOKIE["tokenAuth"]);
 	}
-	header("Location: connexion.php");
+	header("Location: ../connexion.php");
 
 ?>

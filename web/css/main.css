@@ -529,20 +529,18 @@ img.primaryImageModal{
 
 .cardProjet{
 	background-color: #f1f1f1;
-	width: 225px;
+	width: 300px;
 	height: auto;
-	max-height: 200px;
+	max-height: 250px;
 	display: flex;
 	flex-direction: column;
-	border-bottom-left-radius: 20px;
-	border-top-right-radius: 20px;
 	border: 2px solid #fff;
 	cursor: pointer;
 	position: relative;
 	margin-right:20px;
 	margin-bottom:20px;
 	transition:all 0.4s ease-in-out 0.1s;
-	min-height: 200px;
+	min-height: 250px;
 }
 
 .cardProjet:hover{
@@ -552,8 +550,7 @@ img.primaryImageModal{
 .cardProjet img{
 	width: 100%;
 	height: 100%;
-	border-top-right-radius: 20px;
-	border-bottom-left-radius: 20px;
+
 
 }
 
@@ -561,10 +558,10 @@ img.primaryImageModal{
 	padding: 5px;
 	margin: 0;
 	text-align: center;
-	background-color: #075187;
-	font-size: 16px;
+	background-color: rgba(23,32,42,0.6);
+	font-size: 20px;
+	font-weight: bold;
 	color:#fff;
-	border-bottom-left-radius: 20px;
 
 }
 
@@ -593,8 +590,7 @@ img.primaryImageModal{
 	margin-top:10px;
 	font-size: 12px;
 	color:#17202A;
-	border-bottom-left-radius: 5px;
-	border-top-right-radius: 5px;
+
 
 }
 
@@ -619,14 +615,14 @@ img.primaryImageModal{
 }
 
 /*Modal projet*/
-.effetModalProjet{
+.effetModalProjet, .effetModalMentions, .effetModalCGV{
 	display: none;
 	opacity:0;
 	transition:all 0.6s ease;
 
 }
 
-.visibleModalProjet{
+.visibleModalProjet, .visibleModalMentions, .visibleModalCGV{
 	display: block;
 	opacity:1;
 	animation-name: bounceIn;
@@ -635,14 +631,14 @@ img.primaryImageModal{
 	animation-fill-mode: forwards;
 }
 
-.hideModalProjet{
+.hideModalProjet, .hideModalMentions, .hideModalCGV{
 	animation-name: bounceOut;
 	animation-duration: 200ms;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
-.modalProjet {
+.modalProjet, .modalMentions, .modalCGV {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -650,8 +646,17 @@ img.primaryImageModal{
 	top: 0;
 	z-index: 100;
 	left: 0;
+	overflow-y: auto;
+}
 
+.modalMentions ul, .modalMentions li, .modalCGV li{
+	padding-inline-start: 10px;
+	list-style-type: none;
+}
 
+#bodyModalMentionsId, #bodyModalCGVId{
+	padding:20px 20px 0px 20px;
+	overflow-y: auto;
 }
 
 .contentModal{
@@ -668,10 +673,19 @@ img.primaryImageModal{
 	transform: translate(-50%,-50%);
 }
 
+#ctModalMentions, #ctModalCGV{
+	width:100%;
+	height: auto;
+	top:0;
+	left:0;
+	transform: translate(0px,0px);
+	padding-bottom: 0;
+}
+
 .headerModal{
 	height: auto;
 	background-color: #17202A;
-	padding: 20px;
+	padding: 30px 20px 10px 20px;
 	text-align: center;
 	color:#fff;
 
@@ -679,12 +693,13 @@ img.primaryImageModal{
 
 .headerModal h1 {
 	font-family: "Montserrat", sans-serif;
+	font-size:24px;
 }
 
 .closeModal{
 	position: absolute;
-	top:20px;
-	right:20px;
+	top:5px;
+	right:5px;
 	font-size: 30px;
 	cursor: pointer;
 }
@@ -694,7 +709,7 @@ img.primaryImageModal{
 	color:#BDC3C7;
 }
 
-#bodyModalId{
+#bodyModalId, #bodyModalMentionsId, #bodyModalCGVId{
 	font-size: 16px;
 	padding-bottom:20px;
 	background-color: #fff;
@@ -733,7 +748,6 @@ img.primaryImageModal{
 }
 
 #technologiesModal, #competencesModal, .urlModalChild{
-	border-radius: 8px;
 	background-color:#17202A;
 	color:#fff;
 	padding:10px;
@@ -1241,6 +1255,12 @@ footer .iconFooter a:hover{
 /*
 	END MODULE VEILLE TECHNOLOGIQUE
  */
+
+
+
+
+
+
 
 
 

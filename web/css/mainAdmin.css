@@ -341,6 +341,10 @@ body{
 	padding:10px;
 }
 
+.collapseCompetence, .collapseTechnologie{
+	height: 0px;
+}
+
 .expandCollapse{
 	height: 100%;
 }

@@ -67,7 +67,7 @@ document.querySelector(".btnCollapseTechnologie").addEventListener("click", (e) 
 
 document.querySelector("#imageUpload").addEventListener("change", (e) => {
     document.querySelector("#previewFileDiv").innerHTML = "";
-    console.log("Nombre de fichier : "+ e.target.files.length);
+    // console.log("Nombre de fichier : "+ e.target.files.length);
 
     if(e.target.files.length <= 3) {
 
@@ -79,7 +79,7 @@ document.querySelector("#imageUpload").addEventListener("change", (e) => {
 
         }
     }else{
-        console.log("Nombre de fichier maximum limité à 3 !");
+        // console.log("Nombre de fichier maximum limité à 3 !");
         e.preventDefault();
     }
 });
@@ -135,7 +135,7 @@ function createProject() {
 
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(xmlhttp.responseText);
-            console.info(res);
+            // console.info(res);
 
 
             document.querySelector(".filtre").classList.add("slide-in");
@@ -191,7 +191,7 @@ function createProject() {
 
     };
 
-    xmlhttp.open("POST", "process/creerProjet.php");
+    xmlhttp.open("POST", "creerProjet.php");
     xmlhttp.send(formData);
 
 
@@ -218,7 +218,7 @@ function deleteProject(id) {
 
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(xmlhttp.responseText);
-            console.info(res);
+            // console.info(res);
 
             if(res === "ok"){
                 showSnackbar("Projet " + id + " supprimé.", "#43A047", id);
@@ -232,7 +232,7 @@ function deleteProject(id) {
 
     };
 
-    xmlhttp.open("POST", "process/deleteProjet.php", true);
+    xmlhttp.open("POST", "deleteProjet.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("id="+id);
 

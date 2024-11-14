@@ -1,10 +1,11 @@
 <div class="flex flex-col gap-y-16">
 
 	<div id="home" class="w-full flex flex-col gap-y-6">
-		<div class="mx-auto max-w-8xl px-8 py-16 flex flex-row items-center">
-			<p class="text-5xl text-gray-300 mr-32">Hi,<br> My name is <br>
-				<span class="text-5xl font-semibold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent py-2">Augustin Desaintfucien</span></p>
-			<div class="bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full w-80 h-80 overflow-hidden p-1">
+		<div class="mx-auto max-w-8xl px-8 py-16 flex flex-col sm:flex-row items-center">
+			<p class="text-3xl sm:text-5xl text-gray-300 mb-16 sm:mb-0 sm:mr-32 sm:text-left">Hi,<br> My name is <br>
+				<span class="text-3xl sm:text-5xl font-semibold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent py-2">Augustin Desaintfucien</span>
+			</p>
+			<div class="bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full w-60 h-60 sm:w-80 sm:h-80 overflow-hidden p-1">
 				<img src="images/me.jpg" class="rounded-full" alt="">
 			</div>
 		</div>
@@ -20,15 +21,15 @@
 			<p class="font-bold text-4xl text-gray-300 py-2 text-center">Work experience</p>
 			<div class="flex flex-col gap-y-6 text-gray-300">
 
-				<div class="flex flex-col border-b border-b-neutral-600 w-[500px] py-4 gap-y-2">
-					<div class="flex flex-row justify-between">
-						<p class="text-2xl text-white">Developer</p>
-						<span class="rounded-full bg-red-100 text-red-600 py-2 px-3 text-xs">Associative</span>
+				<div class="flex flex-col border-b border-b-neutral-600 w-[250px] sm:w-[500px] py-4 gap-y-2">
+					<div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
+						<p class="text-2xl text-white ">Developer</p>
+						<span class="rounded-full bg-red-100 text-red-600 py-2 px-3 text-xs w-fit">Associative</span>
 					</div>
 					<div>
 						<p class="text-xs">Stack: Typescript, Java</p>
 					</div>
-					<div class="flex flex-row justify-between text-neutral-300 text-sm">
+					<div class="flex flex-col sm:flex-row justify-between text-neutral-300 text-sm space-y-2 sm:space-y-2">
 						<div class="flex flex-row gap-x-6">
 							<div class="flex flex-row space-x-1 space-y-1">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,15 +53,15 @@
 					</div>
 				</div>
 
-				<div class="flex flex-col border-b border-b-neutral-600 w-[500px] py-4 gap-y-2">
-					<div class="flex flex-row justify-between">
+				<div class="flex flex-col border-b border-b-neutral-600 w-[250px] sm:w-[500px] py-4 gap-y-2">
+					<div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
 						<p class="text-2xl text-white">Designer/Developer</p>
-						<span class="rounded-full bg-emerald-100 text-emerald-600 py-2 px-3 text-xs">Apprenticeship</span>
+						<span class="rounded-full bg-emerald-100 text-emerald-600 py-2 px-3 text-xs w-fit">Apprenticeship</span>
 					</div>
 					<div>
 						<p class="text-xs">Stack: Angular, Springboot, Kubernetes</p>
 					</div>
-					<div class="flex flex-row justify-between text-neutral-300 text-sm">
+					<div class="flex flex-col sm:flex-row justify-between text-neutral-300 text-sm space-y-2 sm:space-y-2">
 						<div class="flex flex-row gap-x-6">
 							<div class="flex flex-row space-x-1 space-y-1">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,17 +85,17 @@
 					</div>
 				</div>
 
-				<div class="flex flex-col border-b border-b-neutral-600 w-[500px] py-4 gap-y-2">
-					<div class="flex flex-row justify-between">
+				<div class="flex flex-col border-b border-b-neutral-600 w-[250px] sm:w-[500px] py-4 gap-y-2">
+					<div class="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0">
 						<p class="text-2xl text-white">Web Developer</p>
-						<span class="rounded-full bg-blue-100 text-blue-600 py-2 px-3 text-xs">Freelance</span>
+						<span class="rounded-full bg-blue-100 text-blue-600 py-2 px-3 text-xs w-fit">Freelance</span>
 					</div>
 					<div>
 						<p class="text-xs">Stack: Springboot, Javascript, Docker</p>
 					</div>
-					<div class="flex flex-row justify-between text-neutral-300 text-sm">
+					<div class="flex flex-col sm:flex-row justify-between text-neutral-300 text-sm space-y-2 sm:space-y-2">
 						<div class="flex flex-row gap-x-6">
-							<div class="flex flew-row space-x-1 space-y-1">
+							<div class="flex flex-row space-x-1 space-y-1">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
 								</svg>
@@ -301,9 +302,9 @@
 	</div>
 	<div id="contact" class="w-full text-center">
 		<div class="mx-auto max-w-6xl px-8 pb-16">
-			<p class="text-4xl text-gray-300 font-semibold">For any questions please mail me:</p>
-			<p class="text-4xl font-semibold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent py-2">
-				<a href="mailto:augustin.1201@outlook.fr" class="decoration-0 line-clamp-2">augustin.1201&#64;outlook.fr</a>
+			<p class="text-2xl sm:text-4xl text-gray-300 font-semibold">For any questions please mail me:</p>
+			<p class="text-2xl sm:text-4xl font-semibold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent py-2">
+				<a href="mailto:augustin.1201@outlook.fr" class="decoration-0 line-clamp-2 break-words">augustin.1201&#64;outlook.fr</a>
 			</p>
 		</div>
 	</div>

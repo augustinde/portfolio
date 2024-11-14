@@ -1,4 +1,8 @@
 # Portfolio
 This is a portfolio of my work. It includes a variety of projects that I have worked on.
 
-v1.0.0
+# Deploy: 
+`ng build --output-path docs --base-href /portfolio/`
+
+v1.0.1
+

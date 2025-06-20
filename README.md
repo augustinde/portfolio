@@ -4,4 +4,4 @@ This is a portfolio of my work. It includes a variety of projects that I have wo
 # Deploy:
 `ng build --output-path docs --base-href https://augustinde.dev`
 
-v1.0.3
+v1.0.5

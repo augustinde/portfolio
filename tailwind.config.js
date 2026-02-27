@@ -5,6 +5,7 @@ module.exports = {
     extend: {
 		fontFamily: {
 			'poppins': ['Poppins', 'sans-serif'],
+			'mono': ['"Fira Code"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
 		}
 	},
   },

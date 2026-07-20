@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Augustin Desaintfucien — Développeur Full Stack</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="description" content="Portfolio d'Augustin Desaintfucien, développeur full-stack passionné par l'aéronautique et les nouvelles technologies. Angular, Spring Boot, Cloud, Kubernetes.">
+	<link href="favicon.ico" rel="icon" type="image/x-icon">
+	<link href="styles.css" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="sticky top-0 z-50 border-b border-slate-800/50 backdrop-blur-xl" style="background: rgba(3,7,18,0.82)">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex h-16 items-center justify-between">
+			<a href="#home" class="flex items-center gap-3 group">
+				<div class="nav-logo">AD</div>
+				<span class="hidden sm:block text-white font-semibold text-sm tracking-tight">Augustin Desaintfucien</span>
+			</a>
+			<div class="hidden sm:flex items-center gap-7">
+				<a class="nav-link" href="#about">À propos</a>
+				<a class="nav-link" href="#experience">Expériences</a>
+				<a class="nav-link" href="#projects">Projets</a>
+				<a class="nav-link" href="#tech-stack">Stack</a>
+				<a class="nav-link" href="#contact">Contact</a>
+				<div class="flex items-center gap-1 pl-5 ml-1 border-l border-slate-700/60">
+					<a class="p-1.5 text-slate-400 hover:text-white transition-colors rounded-md hover:bg-slate-800/50" href="https://github.com/augustinde" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.24 1.84 1.24 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.398 3-.403 1.02.005 2.043.137 3 .403 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.803 5.62-5.475 5.92.43.37.823 1.1.823 2.22v3.293c0 .32.218.694.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+					</a>
+					<a class="p-1.5 text-slate-400 hover:text-white transition-colors rounded-md hover:bg-slate-800/50" href="https://www.linkedin.com/in/augustinde" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.58c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zM20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.95v5.71h-3.56V9h3.42v1.56h.05c.48-.91 1.66-1.86 3.42-1.86 3.66 0 4.34 2.41 4.34 5.54v6.21z"/></svg>
+					</a>
+				</div>
+			</div>
+			<button id="mobile-menu-button" aria-controls="mobile-menu" class="sm:hidden p-2 text-slate-400 hover:text-white transition-colors rounded-md hover:bg-slate-800/50" type="button">
+				<span class="sr-only">Open main menu</span>
+				<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+			</button>
+		</div>
+	</div>
+	<div class="sm:hidden border-t border-slate-800/50 hidden" id="mobile-menu" style="background: rgba(3,7,18,0.96)">
+		<div class="px-4 py-4 flex flex-col gap-1">
+			<a href="#about" class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">À propos</a>
+			<a href="#experience" class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">Expériences</a>
+			<a href="#projects" class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">Projets</a>
+			<a href="#tech-stack" class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">Stack</a>
+			<a href="#contact" class="block px-3 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors">Contact</a>
+		</div>
+	</div>
+</nav>
+<!-- ===== HERO ===== -->
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+
+	<!-- Background -->
+	<div class="absolute inset-0" style="background-color:#030712">
+		<div class="grid-bg absolute inset-0"></div>
+		<!-- Orbs -->
+		<div class="orb w-96 h-96 bg-cyan-500" style="top:15%;left:-8rem;animation-delay:0s"></div>
+		<div class="orb w-80 h-80 bg-indigo-600" style="bottom:20%;right:-6rem;animation-delay:4s"></div>
+		<div class="orb w-64 h-64 bg-purple-700" style="top:60%;left:40%;animation-delay:7s"></div>
+	</div>
+
+	<!-- Content -->
+	<div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+		<!-- Text -->
+		<div class="flex-1 text-center lg:text-left">
+			<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-5">
+				Bonjour,<br>je suis<br>
+				<span class="gradient-text">Augustin.</span>
+			</h1>
+			<p class="text-slate-400 text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+				Passionné par l'aéronautique et les nouvelles technologies,
+				je conçois des solutions web innovantes et performantes qui répondent
+				aux défis numériques de demain.
+			</p>
+			<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+				<a href="#projects" class="btn-primary">
+					Voir mes projets
+					<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+					</svg>
+				</a>
+				<a href="#contact" class="btn-secondary">Me contacter</a>
+			</div>
+		</div>
+
+		<!-- Avatar -->
+		<div class="relative flex-shrink-0">
+			<div class="avatar-ring">
+				<img src="images/me.jpg" class="w-60 h-60 sm:w-72 sm:h-72 rounded-full object-cover" alt="Augustin Desaintfucien">
+			</div>
+			<!-- Floating chips — hidden on xs to avoid overlap -->
+			<div class="hidden sm:block absolute -top-3 -right-10 bg-slate-900 border border-cyan-500/30 rounded-xl px-3 py-1.5 text-xs font-mono text-cyan-400 shadow-lg whitespace-nowrap">
+				&lt;Angular /&gt;
+			</div>
+			<div class="hidden sm:block absolute top-1/2 -right-14 bg-slate-900 border border-indigo-500/30 rounded-xl px-3 py-1.5 text-xs font-mono text-indigo-400 shadow-lg whitespace-nowrap">
+				Spring Boot
+			</div>
+			<div class="hidden sm:block absolute -bottom-3 right-6 bg-slate-900 border border-purple-500/30 rounded-xl px-3 py-1.5 text-xs font-mono text-purple-400 shadow-lg whitespace-nowrap">
+				☸ Kubernetes
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scroll indicator -->
+	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600">
+		<span class="text-xs font-mono tracking-widest">SCROLL</span>
+		<div class="w-px h-10 bg-gradient-to-b from-slate-600 to-transparent animate-bounce"></div>
+	</div>
+
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-24 px-6 lg:px-8">
+	<div class="max-w-5xl mx-auto">
+
+		<h2 class="section-title">À propos de moi</h2>
+		<div class="section-divider"></div>
+
+		<div class="glass-card rounded-2xl p-8 sm:p-12">
+			<!-- Stats -->
+			<div class="grid grid-cols-3 gap-6 mb-10 pb-10 border-b border-slate-700/50">
+				<div class="text-center">
+					<p class="text-4xl sm:text-5xl font-bold gradient-text mb-1"><span id="age-value"></span></p>
+					<p class="text-slate-500 text-xs font-mono tracking-wide uppercase">ans</p>
+				</div>
+				<div class="text-center">
+					<p class="text-4xl sm:text-5xl font-bold gradient-text mb-1">6+</p>
+					<p class="text-slate-500 text-xs font-mono tracking-wide uppercase">ans d'exp.</p>
+				</div>
+				<div class="text-center">
+					<p class="text-4xl sm:text-5xl font-bold gradient-text mb-1">10+</p>
+					<p class="text-slate-500 text-xs font-mono tracking-wide uppercase">projets</p>
+				</div>
+			</div>
+			<!-- Bio -->
+			<p class="text-slate-300 text-base sm:text-lg leading-relaxed text-center max-w-3xl mx-auto">
+				Développeur full-stack passionné par l'aéronautique et les nouvelles technologies,
+				je me spécialise dans le développement d'applications web et la gestion d'infrastructures cloud.
+				Mon objectif&nbsp;: concevoir des solutions innovantes et performantes répondant aux défis numériques de demain.
+			</p>
+		</div>
+
+	</div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="py-24 px-6 lg:px-8">
+	<div class="max-w-4xl mx-auto">
+
+		<h2 class="section-title">Expériences</h2>
+		<div class="section-divider"></div>
+
+		<div class="flex flex-col gap-5">
+
+			<!-- Freelance Full Stack – Présent -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-indigo-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Développeur Full Stack</h3>
+							<p class="text-slate-400 text-sm mt-0.5">France</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Mai 2025 — Présent</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Spring Boot</span>
+						<span class="tech-pill">Angular</span>
+						<span class="tech-pill">Cloud</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Team Peps – Présent -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 to-pink-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Développeur</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Team Peps · Remote</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Mars 2024 — Présent</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Java</span>
+						<span class="tech-pill">Angular</span>
+						<span class="tech-pill">Kubernetes</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Athena Esport – Présent -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-500 to-red-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Développeur</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Athena Esport · Remote</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Oct 2024 — Présent</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">TypeScript</span>
+						<span class="tech-pill">Java</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Moji CDI -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-emerald-500 to-teal-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Développeur Full Stack</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Moji · Nanterre, France</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Jan 2025 — Mars 2025</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">React</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Air France Alternance -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-indigo-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Designer / Développeur</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Air France · Valbonne, France</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Sept 2022 — Juin 2024</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Angular</span>
+						<span class="tech-pill">Spring Boot</span>
+						<span class="tech-pill">Kubernetes</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Freelance Web Dev -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-violet-500 to-purple-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">Développeur Web</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Freelance · Saint-Quentin, France</p>
+						</div>
+						<span class="text-slate-500 text-xs font-mono sm:text-right">Avr 2019 — Sept 2022</span>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Spring Boot</span>
+						<span class="tech-pill">JavaScript</span>
+						<span class="tech-pill">Docker</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="py-24 px-6 lg:px-8">
+	<div class="max-w-4xl mx-auto">
+
+		<h2 class="section-title">Projets</h2>
+		<div class="section-divider"></div>
+
+		<div class="flex flex-col gap-5">
+
+			<!-- 250KT -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-indigo-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">250KT</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Outil de préparation et de suivi de vol pour pilotes privés, disponible sur le web et en application mobile.</p>
+						</div>
+						<div class="flex flex-col sm:items-end gap-1.5 flex-shrink-0">
+							<span class="text-xs font-mono text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 px-2.5 py-1 rounded-lg whitespace-nowrap">✈ Aviation</span>
+							<span class="flex items-center gap-1.5 text-xs text-slate-500">
+								<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+								Bientôt disponible
+							</span>
+						</div>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Angular</span>
+						<span class="tech-pill">Spring Boot</span>
+						<span class="tech-pill">GCP</span>
+						<span class="tech-pill">K8s</span>
+						<span class="tech-pill">Flutter</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- MotoSecure -->
+			<div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-600 rounded-l-2xl"></div>
+				<div class="pl-4">
+					<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+						<div>
+							<h3 class="text-lg font-bold text-white">MotoSecure</h3>
+							<p class="text-slate-400 text-sm mt-0.5">Tracker GPS pour sécuriser votre moto et suivre vos trajets — application mobile couplée à un boîtier connecté.</p>
+						</div>
+						<div class="flex flex-col sm:items-end gap-1.5 flex-shrink-0">
+							<span class="text-xs font-mono text-purple-400 bg-purple-400/10 border border-purple-400/20 px-2.5 py-1 rounded-lg whitespace-nowrap">🏍 IoT</span>
+							<a href="https://github.com/augustinde/motosecure-mobile" target="_blank" rel="noopener noreferrer"
+							   class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors">
+								<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+									<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.24 1.84 1.24 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.398 3-.403 1.02.005 2.043.137 3 .403 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.803 5.62-5.475 5.92.43.37.823 1.1.823 2.22v3.293c0 .32.218.694.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+								</svg>
+								Voir le code
+							</a>
+						</div>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="tech-pill">Kotlin</span>
+						<span class="tech-pill">Jetpack Compose</span>
+						<span class="tech-pill">Arduino</span>
+						<span class="tech-pill">Firebase</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- ===== TECH STACK ===== -->
+<section id="tech-stack" class="py-24 px-6 lg:px-8">
+	<div class="max-w-5xl mx-auto">
+
+		<h2 class="section-title">Tech Stack</h2>
+		<div class="section-divider"></div>
+
+		<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+
+			<!-- Angular -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#ang-clip)">
+						<path d="M97.1406 16.796L93.625 69.921L61.2031 -0.000854492L97.1406 16.796ZM74.4844 85.546L50.2656 99.6085L25.6562 85.546L30.3438 73.4366H69.7969L74.4844 85.546ZM50.2656 26.5616L62.7656 57.8116H37.375L50.2656 26.5616ZM6.51562 69.921L3 16.796L38.9375 -0.000854492L6.51562 69.921Z" fill="url(#ang-grad)"/>
+					</g>
+					<defs>
+						<linearGradient id="ang-grad" x1="23.7813" y1="90.5851" x2="98.7031" y2="54.9601" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#E40035"/>
+							<stop offset="0.5" stop-color="#DC087D"/>
+							<stop offset="1" stop-color="#6C00F5"/>
+						</linearGradient>
+						<clipPath id="ang-clip">
+							<rect width="94.5312" height="100" fill="white" transform="translate(3 -0.000854492)"/>
+						</clipPath>
+					</defs>
+				</svg>
+				<span class="tech-icon-name">Angular</span>
+			</div>
+
+			<!-- Java -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M36.7526 77.3362C36.7526 77.3362 32.9313 79.5584 39.4722 80.3103C47.3966 81.2143 51.4463 81.0848 60.179 79.4319C60.179 79.4319 62.475 80.8715 65.681 82.1185C46.1052 90.5083 21.3765 81.6324 36.7526 77.3362ZM34.3605 66.3878C34.3605 66.3878 30.0745 69.5605 36.6203 70.2375C45.0852 71.1107 51.77 71.1822 63.3375 68.9548C63.3375 68.9548 64.9375 70.5768 67.4533 71.4639C43.7846 78.3849 17.4221 72.0097 34.3605 66.3878Z" fill="#5382A1"/>
+					<path d="M54.5266 47.8159C59.3503 53.3692 53.2594 58.3666 53.2594 58.3666C53.2594 58.3666 65.507 52.044 59.8822 44.1263C54.6289 36.7432 50.6 33.0742 72.4098 20.4255C72.4098 20.4255 38.1757 28.9755 54.5266 47.8156" fill="#E76F00"/>
+					<path d="M80.4175 85.4344C80.4175 85.4344 83.2454 87.7643 77.303 89.567C66.0036 92.9902 30.2732 94.0238 20.3473 89.7034C16.7794 88.1514 23.4705 85.9973 25.5752 85.545C27.7701 85.069 29.0247 85.1579 29.0247 85.1579C25.0566 82.3624 3.37677 90.6467 18.0125 93.0188C57.9258 99.4917 90.7704 90.1044 80.4175 85.4344Z" fill="#5382A1"/>
+					<path d="M59.8822 0.000777813C59.8822 0.000777813 70.2727 10.3951 50.0272 26.3777C33.7927 39.1989 46.3252 46.5091 50.0206 54.8614C40.5441 46.3114 33.5894 38.7846 38.2553 31.7796C45.1031 21.4962 64.0743 16.5107 59.8822 0.000488281" fill="#E76F00"/>
+					<path d="M40.4338 99.6861C58.4426 100.839 86.097 99.0465 86.752 90.5253C86.752 90.5253 85.4931 93.7559 71.8687 96.3211C56.4978 99.2136 37.5401 98.876 26.296 97.0221C26.2963 97.0221 28.5978 98.9272 40.4341 99.6861" fill="#5382A1"/>
+				</svg>
+				<span class="tech-icon-name">Java</span>
+			</div>
+
+			<!-- Spring -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M91.0588 5.74655C89.6221 9.23928 87.7643 12.3357 85.7083 15.1101C76.642 5.8704 63.9592 -0.000366211 49.9635 -0.000366211C22.4675 -0.000366211 0 22.3432 0 49.9383C0 64.3551 6.16802 77.3353 15.9526 86.5006L17.8105 88.1603C26.4556 95.4678 37.7017 99.9018 49.9387 99.9018C76.1961 99.9018 97.8214 79.416 99.6792 53.5549C101.165 40.9959 97.3507 24.9194 91.0588 5.74655Z" fill="#6CB52D"/>
+				</svg>
+				<span class="tech-icon-name">Spring</span>
+			</div>
+
+			<!-- Tailwind -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M50.0002 20.0005C36.6665 20.0005 28.3334 26.6655 24.9996 39.9942C30.0002 33.3292 35.8337 30.8308 42.4999 32.4964C46.3039 33.4468 49.0224 36.2065 52.0323 39.2602C56.9341 44.2345 62.6075 49.9917 75.0009 49.9917C88.3334 49.9917 96.6677 43.3267 100 29.9967C95.0009 36.6617 89.1674 39.1614 82.4999 37.4958C78.6973 36.5454 75.9787 33.7856 72.9689 30.732C68.067 25.7576 62.3924 20.0005 50.0002 20.0005ZM24.9996 49.9917C11.6671 49.9917 3.33274 56.6567 0.000244141 69.9866C4.99962 63.3217 10.8331 60.822 17.5006 62.4888C21.3032 63.4405 24.0218 66.199 27.0316 69.2514C31.9335 74.2257 37.6081 79.9841 50.0002 79.9841C63.334 79.9841 71.6671 73.3191 75.0009 59.9892C70.0002 66.6542 64.1668 69.1538 57.5006 67.487C53.6966 66.5379 50.9781 63.7768 47.9682 60.7244C43.0664 55.7501 37.393 49.9917 24.9996 49.9917Z" fill="#06B6D4"/>
+				</svg>
+				<span class="tech-icon-name">Tailwind</span>
+			</div>
+
+			<!-- Docker -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M99.014 41.0887C98.7428 40.8733 96.211 38.9616 90.8716 38.9616C89.4617 38.9678 88.0548 39.0887 86.6646 39.3232C85.6312 32.2401 79.7751 28.7867 79.5125 28.6318L78.0788 27.8049L77.1358 29.1657C75.9549 30.9936 75.0928 33.0086 74.5867 35.125C73.6307 39.1683 74.2121 42.966 76.266 46.2127C73.7858 47.5948 69.8072 47.9351 69.002 47.9651H3.13051C1.40996 47.9675 0.0138216 49.3579 0.00444499 51.0783C-0.0723876 56.849 0.905303 62.5853 2.88937 68.0047C5.15852 73.9555 8.5344 78.3389 12.9264 81.0215C17.8481 84.0356 25.8441 85.7579 34.908 85.7579C39.0026 85.7708 43.0896 85.4002 47.1152 84.6513C52.7113 83.6238 58.0961 81.6679 63.047 78.8641C67.1264 76.5018 70.7979 73.4965 73.9194 69.9639C79.1382 64.0562 82.2472 57.4767 84.5593 51.6295H85.4807C91.1946 51.6295 94.7083 49.343 96.6459 47.4269C97.9336 46.2049 98.9389 44.7162 99.5912 43.0651L100 41.8681L99.014 41.0887Z" fill="#2496ED"/>
+				</svg>
+				<span class="tech-icon-name">Docker</span>
+			</div>
+
+			<!-- Kubernetes -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 106 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M94.2519 24.4983C93.6801 22.6686 92.3079 21.182 90.5926 20.2671L55.7145 3.57141C54.7996 3.11399 53.7704 2.99963 52.8556 2.99963C51.9408 2.99963 50.9116 2.99963 49.9967 3.22834L15.1186 20.0384C13.4033 20.8389 12.1454 22.3255 11.688 24.2696L3.11142 61.8922C2.76836 63.8362 3.22578 65.7802 4.36932 67.3812L28.4981 97.2277C29.8704 98.5999 31.8144 99.5148 33.7584 99.6291H72.1815C74.2399 99.8578 76.1839 98.943 77.4418 97.2277L101.571 67.3812C102.714 65.7802 103.172 63.8362 102.943 61.8922L94.2519 24.4983Z" fill="#326DE6"/>
+				</svg>
+				<span class="tech-icon-name">Kubernetes</span>
+			</div>
+
+			<!-- GCP -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#gcp-clip)">
+						<path d="M63.4531 32.1617H66.5046L75.1981 23.4683L75.6256 19.7796C59.4501 5.50287 34.7571 7.0412 20.4804 23.2168C16.5109 27.7102 13.6312 33.0546 12.0635 38.839C13.0318 38.4408 14.1049 38.3779 15.1151 38.6546L32.4978 35.7875C32.4978 35.7875 33.3822 34.3246 33.8391 34.4168C41.5727 25.9246 54.5878 24.9353 63.516 32.1617H63.4531Z" fill="#EA4335"/>
+						<path d="M87.5801 38.839C85.5807 31.4827 81.4813 24.8683 75.7765 19.809L63.5788 32.0066C68.7303 36.215 71.6645 42.557 71.5387 49.2091V51.3762C77.5369 51.3762 82.395 56.2385 82.395 62.2326C82.395 68.2308 77.5327 73.0889 71.5387 73.0889H49.8219L47.6548 75.2853V88.3088L49.8219 90.4759H71.5387C83.9879 90.5723 95.0328 82.5034 98.7298 70.6159C102.418 58.7242 97.8915 45.8139 87.5801 38.839Z" fill="#4285F4"/>
+						<path d="M28.0756 90.3543H49.7925V72.9715H28.0756C26.5289 72.9715 24.999 72.6404 23.5906 71.9949L20.5391 72.938L11.7869 81.6315L11.024 84.683C15.9325 88.3884 21.9223 90.3794 28.0756 90.3543Z" fill="#34A853"/>
+						<path d="M28.0756 33.9599C16.0121 34.0311 5.32759 41.7563 1.47966 53.1869C-2.36827 64.6175 1.46708 77.2343 11.0282 84.5865L23.6241 71.9906C18.1582 69.5217 15.7312 63.0918 18.2001 57.6259C20.669 52.16 27.099 49.733 32.5649 52.2019C34.9709 53.2917 36.899 55.2199 37.9889 57.6259L50.5848 45.03C45.2237 38.0258 36.8949 33.9305 28.0756 33.9599Z" fill="#FBBC05"/>
+					</g>
+					<defs>
+						<clipPath id="gcp-clip">
+							<rect width="100" height="80.4753" fill="white" transform="translate(0 10.0005)"/>
+						</clipPath>
+					</defs>
+				</svg>
+				<span class="tech-icon-name">GCP</span>
+			</div>
+
+			<!-- PostgreSQL -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M98.4716 59.9027C97.8902 58.137 96.3673 56.9072 94.3978 56.6121C93.4691 56.4731 92.4055 56.5323 91.1469 56.7925C88.9532 57.2464 87.3257 57.4192 86.138 57.4526C90.6212 49.8623 94.2667 41.2068 96.3654 33.059C99.759 19.8842 97.9455 13.8823 95.8264 11.1675C90.2183 3.98172 82.0361 0.121465 72.1652 0.00334804C66.8994 -0.0612175 62.2768 0.981325 59.8653 1.73104C57.62 1.33378 55.2059 1.11198 52.6728 1.07096C47.9244 0.994998 43.729 2.03298 40.1442 4.1663C38.1595 3.4933 34.9742 2.54457 31.2958 1.93917C22.6444 0.514935 15.6716 1.6247 10.5714 5.23771C4.3955 9.61221 1.53253 17.2127 2.06202 27.828C2.23018 31.1984 4.1103 41.4529 7.0706 51.178C8.77195 56.7678 10.5862 61.4097 12.4629 64.976C15.1243 70.033 17.9722 73.011 21.1692 74.0805C22.961 74.679 26.2168 75.0983 29.6411 72.2385C30.0751 72.7656 30.6542 73.2894 31.4227 73.7759C32.3987 74.3931 33.5922 74.8974 34.7841 75.1963C39.0795 76.273 43.1029 76.0038 46.5356 74.4945C46.5568 75.1067 46.573 75.6916 46.5867 76.1967C46.6094 77.0159 46.6321 77.8192 46.6621 78.5704C46.8654 83.6498 47.2101 87.5994 48.2312 90.3628C48.9516 92.5561 49.8034 95.1744 51.9706 97.2249C54.2147 99.3491 56.9292 100 59.4153 100C60.6622 100 61.8518 99.8364 62.8953 99.6123C66.6146 98.8129 70.8388 97.5952 73.8945 93.2321C76.7836 89.1075 78.188 82.8952 78.4422 73.1067C78.4751 72.8298 78.5054 72.5655 78.5346 72.3137L78.5952 71.7964L79.2758 71.8564L79.4512 71.8682C83.2394 72.0414 87.8715 71.2358 90.7163 69.9107C92.9642 68.8647 100.168 65.0512 98.4716 59.9027Z" fill="#336791"/>
+				</svg>
+				<span class="tech-icon-name">PostgreSQL</span>
+			</div>
+
+			<!-- Android -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M73.0126 64.0927C70.7166 64.0927 68.8489 62.2235 68.8489 59.9274C68.8489 57.6314 70.7166 55.7637 73.0126 55.7637C75.3091 55.7637 77.1768 57.631 77.1768 59.9274C77.1768 62.2239 75.3091 64.0927 73.0126 64.0927ZM26.9874 64.0927C24.6913 64.0927 22.8236 62.2235 22.8236 59.9274C22.8236 57.6314 24.6909 55.7637 26.9874 55.7637C29.2834 55.7637 31.1511 57.631 31.1511 59.9274C31.1511 62.2239 29.2838 64.0927 26.9874 64.0927ZM74.5061 39.0096L82.8283 24.5961C83.0574 24.1984 83.1193 23.726 83.0005 23.2826C82.8817 22.8392 82.5918 22.4611 82.1945 22.2311C81.7967 22.0021 81.3244 21.9403 80.881 22.0591C80.4377 22.1779 80.0595 22.4677 79.8295 22.8649L71.4033 37.4605C64.9592 34.52 57.7223 32.8817 50 32.8817C42.2777 32.8817 35.0409 34.52 28.5971 37.4605L20.1705 22.8649C19.9405 22.4677 19.5624 22.1779 19.119 22.0591C18.6756 21.9403 18.2033 22.0021 17.8055 22.2311C17.408 22.4608 17.1179 22.839 16.9991 23.2825C16.8802 23.7259 16.9423 24.1984 17.1717 24.5961L25.4939 39.0096C11.2035 46.7819 1.42983 61.249 0 78.3411H100C98.569 61.2494 88.7953 46.7819 74.5061 39.0092" fill="#3DDB85"/>
+				</svg>
+				<span class="tech-icon-name">Android</span>
+			</div>
+
+			<!-- GitHub -->
+			<div class="tech-icon-wrapper">
+				<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M50 1.00049C22.3892 1.00049 -0.000244141 23.386 -0.000244141 51.0007C-0.000244141 73.0924 14.3263 91.8345 34.1931 98.4461C36.6918 98.9088 37.6094 97.3614 37.6094 96.0406C37.6094 94.8485 37.5627 90.9095 37.5416 86.7316C23.6311 89.7562 20.6959 80.8322 20.6959 80.8322C18.4215 75.0528 15.1443 73.5163 15.1443 73.5163C10.608 70.4129 15.4863 70.4765 15.4863 70.4765C20.5073 70.8294 23.1511 75.6292 23.1511 75.6292C27.6105 83.2733 34.8479 81.0631 37.7012 79.7859C38.1498 76.5539 39.4458 74.3485 40.8756 73.0999C29.7701 71.8352 18.0952 67.5479 18.0952 48.3894C18.0952 42.9308 20.0485 38.4701 23.2472 34.9687C22.728 33.7091 21.0167 28.6238 23.7315 21.7366C23.7315 21.7366 27.9301 20.3927 37.4851 26.8619C41.4732 25.7537 45.7507 25.1985 50 25.1796C54.2492 25.1985 58.5298 25.7537 62.5258 26.8619C72.0694 20.3927 76.2622 21.7366 76.2622 21.7366C78.9836 28.6238 77.2715 33.7091 76.7523 34.9687C79.9581 38.4701 81.898 42.9304 81.898 48.3894C81.898 67.5934 70.2012 71.8223 59.0675 73.0599C60.8607 74.6116 62.4587 77.6546 62.4587 82.3192C62.4587 89.0091 62.4007 94.3936 62.4007 96.0406C62.4007 97.3712 63.3007 98.9304 65.8355 98.4394C85.6912 91.8204 99.9998 73.085 99.9998 51.0007C99.9998 23.386 77.6135 1.00049 50 1.00049Z" fill="white"/>
+				</svg>
+				<span class="tech-icon-name">GitHub</span>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-24 px-6 lg:px-8">
+	<div class="max-w-3xl mx-auto">
+
+		<h2 class="section-title">Travaillons ensemble</h2>
+		<div class="section-divider"></div>
+
+		<div class="contact-glow">
+			<div class="relative z-10">
+				<p class="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+					Vous avez un projet en tête ? Une opportunité à partager ?<br>
+					Je suis ouvert à toute collaboration intéressante.
+				</p>
+				<a href="mailto:augustin.1201@outlook.fr" class="btn-primary inline-flex items-center gap-2 mb-8">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+					</svg>
+					augustin.1201&#64;outlook.fr
+				</a>
+				<div class="flex justify-center gap-6">
+					<a href="https://github.com/augustinde" target="_blank" rel="noopener noreferrer"
+					   class="flex items-center gap-2 text-slate-500 hover:text-white transition-colors text-sm font-medium">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.24 1.84 1.24 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.398 3-.403 1.02.005 2.043.137 3 .403 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.803 5.62-5.475 5.92.43.37.823 1.1.823 2.22v3.293c0 .32.218.694.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+						</svg>
+						GitHub
+					</a>
+					<a href="https://www.linkedin.com/in/augustinde" target="_blank" rel="noopener noreferrer"
+					   class="flex items-center gap-2 text-slate-500 hover:text-white transition-colors text-sm font-medium">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.58c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zM20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.95v5.71h-3.56V9h3.42v1.56h.05c.48-.91 1.66-1.86 3.42-1.86 3.66 0 4.34 2.41 4.34 5.54v6.21z"/>
+						</svg>
+						LinkedIn
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-8 px-6 lg:px-8 border-t border-slate-800/50">
+	<div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+		<div class="flex items-center gap-3">
+			<div class="nav-logo">AD</div>
+			<p class="text-slate-500 text-sm">Augustin Desaintfucien</p>
+		</div>
+		<p class="text-slate-700 text-xs font-mono">Built with HTML, CSS &amp; Tailwind CSS</p>
+		<div class="flex gap-3">
+			<a href="https://github.com/augustinde" target="_blank" class="footer-link">
+				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.24 1.84 1.24 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.98-.398 3-.403 1.02.005 2.043.137 3 .403 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.803 5.62-5.475 5.92.43.37.823 1.1.823 2.22v3.293c0 .32.218.694.825.577C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+			</a>
+			<a href="https://www.linkedin.com/in/augustinde" target="_blank" class="footer-link">
+				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.58c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zM20.45 20.45h-3.56v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.95v5.71h-3.56V9h3.42v1.56h.05c.48-.91 1.66-1.86 3.42-1.86 3.66 0 4.34 2.41 4.34 5.54v6.21z"/></svg>
+			</a>
+		</div>
+	</div>
+</footer>
+
+<script>
+	(function() {
+		const menuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+		if (menuButton && mobileMenu) {
+			menuButton.addEventListener('click', function() {
+				mobileMenu.classList.toggle('hidden');
+			});
+			mobileMenu.querySelectorAll('a').forEach(function(link) {
+				link.addEventListener('click', function() {
+					mobileMenu.classList.add('hidden');
+				});
+			});
+		}
+
+		const ageValue = document.getElementById('age-value');
+		if (ageValue) {
+			ageValue.textContent = String(new Date().getFullYear() % 100).padStart(2, '0');
+		}
+	})();
+</script>
+</body>
+</html>

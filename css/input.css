@@ -137,8 +137,10 @@ body {
   color: white;
   text-align: center;
   margin-bottom: 0.75rem;
+}
 
-  @media (min-width: 640px) {
+@media (min-width: 640px) {
+  .section-title {
     font-size: 3rem;
   }
 }
@@ -379,4 +381,3 @@ body {
 .footer-link:hover {
   color: #22d3ee;
 }
-

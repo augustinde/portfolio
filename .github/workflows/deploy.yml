@@ -31,13 +31,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build -- --base-href /
+      - name: Build CSS
+        run: npm run build
+
+      - name: Assemble site
+        run: |
+          mkdir -p dist/css dist/js dist/images dist/fude
+          cp index.html 404.html favicon.ico CNAME dist/
+          cp css/styles.css dist/css/
+          cp js/main.js dist/js/
+          cp images/* dist/images/
+          cp fude/policy.html dist/fude/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/portfolio/browser
+          path: dist
 
   deploy:
     needs: build
